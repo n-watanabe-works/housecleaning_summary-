@@ -1,0 +1,2481 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ハウスクリーニング技能士 学習まとめ</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap');
+
+  :root {
+    --ink: #1a1a2e;
+    --bg: #f8f7f2;
+    --card: #ffffff;
+    --accent: #2e7d6b;
+    --accent-light: #e8f5f2;
+    --accent2: #c07a3a;
+    --accent2-light: #fdf3e7;
+    --rule: #d4cfc4;
+    --muted: #6b6b7b;
+    --badge-1: #2e7d6b;
+    --badge-2: #c07a3a;
+    --badge-3: #5a6ea8;
+    --badge-4: #8b5a9e;
+    --badge-5: #b05050;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.8;
+    padding: 0 0 60px;
+  }
+
+  header {
+    background: var(--ink);
+    color: white;
+    padding: 36px 24px 28px;
+    text-align: center;
+  }
+  header .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: #7ec9bb;
+    margin-bottom: 10px;
+  }
+  header h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(20px, 5vw, 30px);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+  header p { font-size: 13px; color: #b0b8c8; }
+
+  main { max-width: 720px; margin: 0 auto; padding: 0 16px; }
+
+  .chapter-divider {
+    background: var(--ink);
+    color: white;
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin: 48px 0 8px;
+    text-align: center;
+  }
+  .chapter-divider .eyebrow { font-size: 11px; letter-spacing: 0.2em; color: #7ec9bb; margin-bottom: 6px; }
+  .chapter-divider h2 { font-family: 'Noto Serif JP', serif; font-size: 18px; font-weight: 700; }
+
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 36px 0 16px;
+  }
+  .section-label .num {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-weight: 700; font-size: 15px; flex-shrink: 0;
+  }
+  .section-label h2 { font-size: 18px; font-weight: 700; color: var(--ink); }
+
+  .card {
+    background: var(--card);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  }
+  .card h3 {
+    font-size: 15px; font-weight: 700;
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent-light);
+    padding-bottom: 8px; margin-bottom: 14px;
+  }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th {
+    background: var(--ink); color: white;
+    padding: 8px 10px; text-align: left; font-weight: 500;
+  }
+  td { padding: 8px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: #fafaf8; }
+
+  .highlight {
+    background: var(--accent-light);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+    padding: 10px 14px;
+    margin: 10px 0;
+    font-size: 13px;
+  }
+  .warn {
+    background: #fff8e8;
+    border-left: 3px solid var(--accent2);
+    border-radius: 0 6px 6px 0;
+    padding: 10px 14px;
+    margin: 10px 0;
+    font-size: 13px;
+  }
+
+  .def-box { background: #f0f4ff; border-radius: 8px; padding: 12px 14px; font-size: 13px; }
+  .def-box dt { font-weight: 700; color: var(--badge-3); margin-top: 6px; }
+  .def-box dt:first-child { margin-top: 0; }
+  .def-box dd { padding-left: 14px; }
+
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 10px; }
+  .compare-box { border-radius: 8px; padding: 12px; font-size: 13px; }
+  .compare-box.left { background: var(--accent-light); }
+  .compare-box.right { background: var(--accent2-light); }
+  .compare-box h4 { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+  .compare-box h4.left { color: var(--accent); }
+  .compare-box h4.right { color: var(--accent2); }
+
+  .tag { display: inline-block; background: var(--badge-3); color: white; font-size: 11px; padding: 2px 7px; border-radius: 10px; margin-right: 4px; }
+  .tag.red { background: var(--badge-5); }
+  .tag.green { background: var(--badge-1); }
+  .tag.orange { background: var(--badge-2); }
+
+  ul.list { padding-left: 20px; font-size: 13px; }
+  ul.list li { margin-bottom: 4px; }
+
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    padding: 32px 16px 0;
+    border-top: 1px solid var(--rule);
+    margin-top: 48px;
+  }
+
+  @media(max-width:480px){
+    .compare { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">HOUSECLEANING TECHNICIAN EXAM</div>
+  <h1>ハウスクリーニング技能士<br>学習まとめ</h1>
+  <p>第1〜10章より作成｜試験日：2026年9月16日</p>
+</header>
+
+<main>
+
+<!-- ===== 第1章 ===== -->
+<div class="chapter-divider" style="margin-top:24px">
+  <div class="eyebrow">CHAPTER 1</div>
+  <h2>ハウスクリーニングの概要と歴史</h2>
+</div>
+
+<div class="section-label">
+  <div class="num" style="background:var(--badge-1)">1</div>
+  <h2>歴史と現状</h2>
+</div>
+
+<div class="card">
+  <h3>ハウスクリーニングの発展</h3>
+  <table>
+    <tr><th>時代</th><th>できごと</th></tr>
+    <tr><td>1960年代</td><td>高度経済成長。ビルメンテナンス業の発展</td></tr>
+    <tr><td>1970年代</td><td>住宅建設ラッシュ。ハウスクリーニング業が本格化</td></tr>
+    <tr><td>1980年代</td><td>専門化・分業化が進む。家庭向けサービス拡大</td></tr>
+    <tr><td>1990年代</td><td>技能士制度スタート（1993年）。資格の整備</td></tr>
+    <tr><td>2000年代〜</td><td>高齢化・共働き世帯増加により需要拡大</td></tr>
+  </table>
+  <div class="def-box" style="margin-top:12px">
+    <dt>技術 vs 技能</dt>
+    <dd>技術＝知識に基づく方法論（why・whatがわかる）</dd>
+    <dd>技能＝繰り返し練習で身についた身体的スキル（体が覚えている）</dd>
+  </div>
+</div>
+
+<div class="section-label">
+  <div class="num" style="background:var(--badge-1)">2</div>
+  <h2>目的と区分</h2>
+</div>
+
+<div class="card">
+  <h3>ハウスクリーニングの4大目的</h3>
+  <ul class="list">
+    <li>① 衛生的環境の維持（カビ・細菌・害虫の除去）</li>
+    <li>② 美観の維持（見た目の清潔感）</li>
+    <li>③ 建材・設備の保護（劣化防止・寿命延長）</li>
+    <li>④ 安全な住環境の提供（滑り防止・有害物質除去）</li>
+  </ul>
+  <div class="def-box" style="margin-top:10px">
+    <dt>住居の基本5機能</dt>
+    <dd>① 安全 ② 保健 ③ 作業 ④ 休息 ⑤ 文化</dd>
+  </div>
+</div>
+
+<div class="card">
+  <h3>家事代行との違い</h3>
+  <table>
+    <tr><th>項目</th><th>ハウスクリーニング</th><th>家事代行</th></tr>
+    <tr><td>作業内容</td><td>専門的清掃（汚れ除去・洗浄）</td><td>日常家事全般（掃除・洗濯・料理）</td></tr>
+    <tr><td>頻度</td><td>定期または単発（スポット）</td><td>定期（週1回など）</td></tr>
+    <tr><td>専門性</td><td>高い（資格・専門道具・洗剤）</td><td>一般的（家庭用道具）</td></tr>
+    <tr><td>依頼目的</td><td>汚れ・水垢・カビなど落とすため</td><td>家事の負担軽減</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>対象物件の3区分</h3>
+  <table>
+    <tr><th>区分</th><th>特徴・注意点</th><th>主な依頼元</th></tr>
+    <tr><td>① 在宅物件</td><td>指定部位のクリーニングが多い。マナー・打ち合わせ・スタッフ教育が重要</td><td>各顧客から直接</td></tr>
+    <tr><td>② 退去物件</td><td>物件全体を平均的に仕上げる必要あり。汚れへの深い経験・知識が必要</td><td>不動産管理会社</td></tr>
+    <tr><td>③ 新築物件</td><td>傷をつけずに汚れだけ除去。サッシほこり取り・コーキング剤飛沫除去が中心</td><td>建築会社・施工会社</td></tr>
+  </table>
+</div>
+
+<!-- ===== 第2章 ===== -->
+<div class="chapter-divider">
+  <div class="eyebrow">CHAPTER 2</div>
+  <h2>顧客満足・資質・マナー</h2>
+</div>
+
+<div class="section-label">
+  <div class="num" style="background:var(--badge-2)">3</div>
+  <h2>顧客満足とクレーム対応</h2>
+</div>
+
+<div class="card">
+  <h3>CS（顧客満足）の基本</h3>
+  <div class="highlight">
+    顧客満足＝「期待値」を「実際のサービス品質」が上回ったとき生まれる
+  </div>
+  <ul class="list" style="margin-top:10px">
+    <li>クレームはサービス改善のチャンスと捉える</li>
+    <li>不満を持った顧客の約96%は何も言わずに去る（アイスバーグ理論）</li>
+    <li>1人のクレーム客の背後に24人の不満客がいる</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>クレーム対応の手順</h3>
+  <table>
+    <tr><th>ステップ</th><th>内容</th></tr>
+    <tr><td>① 傾聴</td><td>まず最後まで聴く。遮らない</td></tr>
+    <tr><td>② 謝罪</td><td>不満を与えたことへの謝罪（事実確認前でも）</td></tr>
+    <tr><td>③ 事実確認</td><td>何が起きたか客観的に確認</td></tr>
+    <tr><td>④ 解決策の提示</td><td>再施工・返金など具体的な対応を提示</td></tr>
+    <tr><td>⑤ 再発防止</td><td>原因を分析し社内共有</td></tr>
+  </table>
+</div>
+
+<div class="section-label">
+  <div class="num" style="background:var(--badge-2)">4</div>
+  <h2>接客マナー</h2>
+</div>
+
+<div class="card">
+  <h3>メラビアンの法則（第一印象の構成）</h3>
+  <div class="highlight">
+    <strong>視覚情報 55%</strong>（見た目・表情・姿勢）＋ <strong>聴覚情報 38%</strong>（声のトーン・速さ）＋ <strong>言語情報 7%</strong>（話の内容）
+  </div>
+  <div class="warn">試験頻出：「言語情報が最も重要」は×。視覚が最大。</div>
+</div>
+
+<div class="card">
+  <h3>敬語の種類</h3>
+  <table>
+    <tr><th>種類</th><th>使い方</th><th>例</th></tr>
+    <tr><td>尊敬語</td><td>相手の行為を高める</td><td>いらっしゃる・おっしゃる・召し上がる</td></tr>
+    <tr><td>謙譲語</td><td>自分を低めて相手を立てる</td><td>参る・申す・いただく</td></tr>
+    <tr><td>丁寧語</td><td>丁寧に表現する</td><td>〜です・〜ます・ございます</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>名刺交換のマナー</h3>
+  <ul class="list">
+    <li>名刺は両手で差し出し、両手で受け取る</li>
+    <li>受け取った名刺はすぐにしまわず、商談中はテーブルに置く</li>
+    <li>訪問した側（自分）から先に差し出す</li>
+    <li>名刺に書き込んだり折り曲げたりしない</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>電話対応のマナー</h3>
+  <ul class="list">
+    <li>3コール以内に出る。出られなかったら「お待たせいたしました」</li>
+    <li>終話は相手が切ってから（または静かに切る）</li>
+    <li>要件はメモしながら聞く（5W1H）</li>
+    <li>担当者不在時は折り返しの確認をする</li>
+  </ul>
+</div>
+
+<!-- ===== 第3章 ===== -->
+<div class="chapter-divider">
+  <div class="eyebrow">CHAPTER 3</div>
+  <h2>業務の流れと品質管理</h2>
+</div>
+
+<div class="section-label">
+  <div class="num" style="background:var(--badge-3)">5</div>
+  <h2>業務フロー（11ステップ）</h2>
+</div>
+
+<div class="card">
+  <h3>ハウスクリーニング業務の流れ</h3>
+  <table>
+    <tr><th>No.</th><th>工程</th><th>ポイント</th></tr>
+    <tr><td>①</td><td>受注・予約</td><td>顧客情報・作業内容・日程を確認</td></tr>
+    <tr><td>②</td><td>仕様確認</td><td>仕様書に基づき作業範囲・方法を決定</td></tr>
+    <tr><td>③</td><td>作業計画</td><td>人員・時間・機材を計画</td></tr>
+    <tr><td>④</td><td>資材準備</td><td>洗剤・機材・消耗品を用意</td></tr>
+    <tr><td>⑤</td><td>事前確認</td><td>現地確認・お客様との打ち合わせ</td></tr>
+    <tr><td>⑥</td><td>養生</td><td>床・壁などへの汚れ・傷防止処置</td></tr>
+    <tr><td>⑦</td><td>清掃作業</td><td>手順に従い実施</td></tr>
+    <tr><td>⑧</td><td>点検</td><td>仕上がりチェック・手直し</td></tr>
+    <tr><td>⑨</td><td>後片付け</td><td>資機材の撤収・現場の復元</td></tr>
+    <tr><td>⑩</td><td>お客様確認</td><td>完了確認・サインをもらう</td></tr>
+    <tr><td>⑪</td><td>記録・報告</td><td>作業報告書の提出・次回提案</td></tr>
+  </table>
+</div>
+
+<div class="section-label">
+  <div class="num" style="background:var(--badge-3)">6</div>
+  <h2>PDCAサイクル（品質管理）</h2>
+</div>
+
+<div class="card">
+  <h3>PDCAサイクル</h3>
+  <table>
+    <tr><th>工程</th><th>内容</th></tr>
+    <tr><td><strong>P（Plan＝計画）</strong></td><td>仕様に基づき作業計画を作成。目的・目標・手段・方法・教育訓練を定め、適切な人員配置と資機材を用意する</td></tr>
+    <tr><td><strong>D（Do＝実行）</strong></td><td>作業マニュアル・作業手順にしたがって効果的・効率的かつ安全に作業を行う</td></tr>
+    <tr><td><strong>C（Check＝点検）</strong></td><td>評価手法（チェックシステム）を構築し、実施結果を点検・測定・評価する</td></tr>
+    <tr><td><strong>A（Action＝改善）</strong></td><td>点検結果を分析し、改善策を検討。ムダ・ムラ・ムリをなくし、品質向上をはかる</td></tr>
+  </table>
+  <div class="highlight" style="margin-top:10px">
+    <strong>チェックシステムの4要素：</strong>① 誰が（現場責任者）② 何を（チェックリスト）③ どのように（目視・測定機器）④ 手直し（基準未達の場合）
+  </div>
+</div>
+
+<!-- ===== 第4章 ===== -->
+<div class="chapter-divider">
+  <div class="eyebrow">CHAPTER 4</div>
+  <h2>汚れ・素材</h2>
+</div>
+
+<div class="section-label">
+  <div class="num" style="background:var(--badge-4)">7</div>
+  <h2>汚れの種類と除去方法</h2>
+</div>
+
+<div class="card">
+  <h3>汚れの原因（2種類）</h3>
+  <div class="compare">
+    <div class="compare-box left">
+      <h4 class="left">自然的要因</h4>
+      <p>建材から発生する浮遊物質、カビや衛生害虫、外部からの侵入、時間経過で発生する汚れ</p>
+    </div>
+    <div class="compare-box right">
+      <h4 class="right">人為的要因</h4>
+      <p>人が生活するうえで発生する汚れ（綿ほこり・油汚れ・石けんカスなど）。付着量が多く除去が困難なケースが多い</p>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>汚れの分類（5種類）</h3>
+  <table>
+    <tr><th>分類</th><th>特徴</th><th>代表例</th></tr>
+    <tr><td>① 粉状汚れ</td><td>乾いた粒子状。払い・吸引で除去可能</td><td>ほこり・砂・花粉</td></tr>
+    <tr><td>② 水溶性汚れ</td><td>水に溶けやすい。水拭きで除去可能</td><td>糖分・塩分・尿素</td></tr>
+    <tr><td>③ 油脂性汚れ</td><td>水に溶けにくい。アルカリ洗剤が有効</td><td>油・ロウ・皮脂</td></tr>
+    <tr><td>④ 固着物汚れ</td><td>硬化・固着している。物理的除去または強い薬剤が必要</td><td>水垢・石けんカス・錆</td></tr>
+    <tr><td>⑤ 特殊汚れ</td><td>微生物・生物由来</td><td>カビ・バイオフィルム・害虫の排泄物</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>汚れ15種類（試験重要）</h3>
+  <table>
+    <tr><th>汚れ</th><th>主な発生部位</th><th>除去方法・洗剤</th></tr>
+    <tr><td>油汚れ</td><td>キッチン全般</td><td>アルカリ性洗剤</td></tr>
+    <tr><td>水垢（カルシウム系）</td><td>浴室・シンク・蛇口</td><td>酸性洗剤（クエン酸など）</td></tr>
+    <tr><td>石けんカス</td><td>浴室・洗面台</td><td>酸性洗剤または研磨</td></tr>
+    <tr><td>皮脂汚れ</td><td>浴槽・洗面台</td><td>アルカリ性洗剤</td></tr>
+    <tr><td>カビ</td><td>浴室・窓・押し入れ</td><td>塩素系漂白剤</td></tr>
+    <tr><td>黒ずみ（皮脂+ほこり）</td><td>スイッチ周り・巾木</td><td>中性洗剤＋研磨</td></tr>
+    <tr><td>尿石</td><td>トイレ便器</td><td>酸性洗剤（塩酸系）</td></tr>
+    <tr><td>錆（もらいサビ含む）</td><td>浴室・シンク</td><td>酸性洗剤・サビ取り剤</td></tr>
+    <tr><td>タバコのヤニ</td><td>壁・天井・窓</td><td>アルカリ性洗剤</td></tr>
+    <tr><td>手あか</td><td>ドアノブ・手すり</td><td>中性洗剤</td></tr>
+    <tr><td>ほこり</td><td>全域</td><td>乾式（はたき・掃除機）</td></tr>
+    <tr><td>ワックスの劣化</td><td>フローリング</td><td>剥離剤（アルカリ性）</td></tr>
+    <tr><td>水シミ・輪ジミ</td><td>木製家具・フローリング</td><td>専用クリーナー・研磨</td></tr>
+    <tr><td>バイオフィルム</td><td>排水口・浴室</td><td>塩素系漂白剤＋ブラッシング</td></tr>
+    <tr><td>砂・土ほこり</td><td>玄関・窓周り</td><td>掃き・掃除機</td></tr>
+  </table>
+</div>
+
+<div class="section-label">
+  <div class="num" style="background:var(--badge-4)">8</div>
+  <h2>素材の種類と特性</h2>
+</div>
+
+<div class="card">
+  <h3>素材10種類</h3>
+  <table>
+    <tr><th>素材</th><th>特徴・注意点</th><th>代表的使用製品</th></tr>
+    <tr><td>① プラスチック系</td><td>溶剤に侵されやすく研磨剤できずが付く種類が多い</td><td>PP・PE・アクリル・ABS・PVC</td></tr>
+    <tr><td>② 金属系</td><td>酸性でサビ・アルカリで変色の種類あり</td><td>蛇口・シンク・サッシ（鉄・ステンレス・アルミ・銅）</td></tr>
+    <tr><td>③ ガラス系</td><td>硬くきず付きにくいが水アカが付くと除去困難</td><td>窓・鏡・戸棚</td></tr>
+    <tr><td>④ 陶磁器系</td><td>薬品に強い。衝撃に弱く割れやすい</td><td>トイレ便器・タイル</td></tr>
+    <tr><td>⑤ 石質系</td><td>花崗岩は硬くきず・薬品に強い。大理石は酸に弱い</td><td>壁材・床材・テーブル</td></tr>
+    <tr><td>⑥ 木質系</td><td>きず付きやすく吸水性あり。塗装処理品が多い</td><td>収納扉・ドア・フローリング</td></tr>
+    <tr><td>⑦ 塗装系</td><td>塗装の種類で薬品・きずへの耐性が異なる</td><td>レンジフード・しっくい壁</td></tr>
+    <tr><td>⑧ 化粧パネル</td><td>フィルム貼り。耐薬品性あり・きずに弱い</td><td>収納扉・浴室壁面</td></tr>
+    <tr><td>⑨ 繊維系</td><td>天然素材はデリケート。強くこすると風合いが変わる</td><td>カーペット・ソファー・カーテン</td></tr>
+    <tr><td>⑩ 皮革系</td><td>水分を嫌い、きず付きに弱い。専用ケアが必要</td><td>イス・ソファー</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>部位別の主な使用素材</h3>
+  <table>
+    <tr><th>エリア</th><th>部位</th><th>主な素材</th></tr>
+    <tr><td rowspan="3">キッチン</td><td>シンク</td><td>ステンレス・人工大理石</td></tr>
+    <tr><td>ガスコンロ本体</td><td>鋼板・プラスチック・ガラス</td></tr>
+    <tr><td>五徳・汁受け皿</td><td>ホーロー・ステンレス</td></tr>
+    <tr><td>レンジフード</td><td>フード・フィルター</td><td>焼付塗装鋼板。シロッコファン＝アルミ</td></tr>
+    <tr><td rowspan="3">浴室</td><td>浴槽</td><td>FRP・人造大理石・ステンレス・ホーロー・木</td></tr>
+    <tr><td>天井</td><td>FRP</td></tr>
+    <tr><td>壁面・床面</td><td>FRP・磁器タイル・化粧パネル・人工大理石</td></tr>
+    <tr><td rowspan="2">トイレ</td><td>便器・ロータンク</td><td>陶器（便座・便器フタはプラスチック）</td></tr>
+    <tr><td>床</td><td>クッションフロア・フローリング・磁器タイル</td></tr>
+    <tr><td rowspan="2">リビング</td><td>天井・壁面</td><td>ビニルクロス・木・しっくい・塗装壁</td></tr>
+    <tr><td>床</td><td>フローリング（木）・クッションフロア・カーペット・畳</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>モース硬度（素材の硬さ）</h3>
+  <div class="highlight">硬さの尺度1〜10の整数。<strong>数字が大きいほど硬い</strong></div>
+  <table style="margin-top:10px">
+    <tr><th>硬度</th><th>該当鉱物</th><th>硬さの目安</th></tr>
+    <tr><td>1</td><td>滑石</td><td>爪できずが入る（最も柔らかい）</td></tr>
+    <tr><td>2</td><td>石膏</td><td>爪で何とかきずが入る</td></tr>
+    <tr><td>3</td><td>方解石</td><td>硬貨で擦るときずが入る</td></tr>
+    <tr><td>5</td><td>燐灰石</td><td>ナイフの刃で何とかきずが入る</td></tr>
+    <tr><td>6</td><td>正長石</td><td>ナイフではきずが入らない</td></tr>
+    <tr><td>7</td><td>石英</td><td>ガラスや鋼鉄にきずを付けることができる</td></tr>
+    <tr><td>10</td><td>ダイヤモンド</td><td>地球上で最も硬い</td></tr>
+  </table>
+  <div class="def-box" style="margin-top:10px">
+    <dt>覚えておきたい硬度の例</dt>
+    <dd>【素材】爪：2.5 / 鉄：4 / ガラス：5 / ナイフの刃：5.5</dd>
+    <dd>【研磨材】炭酸カルシウム：3 / 酸化セリウム：6前後 / 酸化アルミニウム（アルミナ）：8〜9前後</dd>
+  </div>
+</div>
+
+<!-- ===== 第5章 ===== -->
+<div class="chapter-divider">
+  <div class="eyebrow">CHAPTER 5</div>
+  <h2>住まいの部位別材料</h2>
+</div>
+
+<div class="section-label">
+  <div class="num" style="background:var(--badge-5)">9</div>
+  <h2>第1節　住宅の基礎知識</h2>
+</div>
+
+<div class="card">
+  <h3>住宅の構造別分類</h3>
+  <div class="warn">⚠ 第5章は試験出題頻度は低め。ただし建材特性・環境系サブトピックは要注意。</div>
+  <table style="margin-top:12px">
+    <tr><th>構造</th><th>別称</th><th>特徴</th></tr>
+    <tr><td><strong>木造</strong></td><td>W造</td><td>柱・梁など主要部材に木材を使用。日本で最も普及。工期が短く材料費が低い</td></tr>
+    <tr><td><strong>鉄骨造</strong></td><td>S造（Steel）<br>剛構造</td><td>軽量鉄骨を主要構造体に使用。強度大・耐震性・耐久性に優れる</td></tr>
+    <tr><td><strong>鉄筋コンクリート造</strong></td><td>RC造<br>（Reinforced Concrete）</td><td>コンクリートの中に鉄筋を入れる。圧縮・引張両方に強い。遮音性・耐火性に優れる</td></tr>
+    <tr><td><strong>鉄骨鉄筋コンクリート造</strong></td><td>SRC造</td><td>RC造に鉄骨を加えた構造</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>木造住宅の工法</h3>
+  <div class="compare">
+    <div class="compare-box left">
+      <h4 class="left">軸組工法（在来工法）</h4>
+      <p>柱・梁・桁などの軸組に、斜めにかけ渡す<strong>筋交い</strong>を使った架構式構造。基礎の上に柱と梁を組み合わせて骨組みを作り、屋根・壁を取り付ける</p>
+    </div>
+    <div class="compare-box right">
+      <h4 class="right">ツーバイフォー（2×4）工法</h4>
+      <p>約2inch×4inchの木材規格が名称の由来。床・壁・天井からなる<strong>6面体</strong>を基本の構造体として建物を建てる工法</p>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>木造住宅のメリット・デメリット</h3>
+  <div class="compare">
+    <div class="compare-box left">
+      <h4 class="left">メリット</h4>
+      <ul class="list">
+        <li>工期が短く材料費が低い</li>
+        <li>木材に<strong>調湿性</strong>あり（梅雨は湿気を吸収・冬は放出）→ 結露・カビを抑える</li>
+        <li>デザインの自由度が高い</li>
+        <li>吸音性がある（多孔質構造）</li>
+      </ul>
+    </div>
+    <div class="compare-box right">
+      <h4 class="right">デメリット</h4>
+      <ul class="list">
+        <li>シロアリなどの害虫被害（防蟻処理が必要）</li>
+        <li>火災で燃えやすい（不燃20分・準不燃10分・難燃5分の処理あり）</li>
+        <li>老朽化による耐久性低下（<strong>法定耐用年数22年</strong>）</li>
+        <li>個体差があり品質にばらつきがある</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>鉄骨造（S造）のメリット・デメリット</h3>
+  <div class="compare">
+    <div class="compare-box left">
+      <h4 class="left">メリット</h4>
+      <ul class="list">
+        <li>強度大・耐震性・耐久性に優れる</li>
+        <li>品質が安定（工場大量生産）</li>
+        <li>間取りの自由度が高い（吹き抜けなど）</li>
+      </ul>
+    </div>
+    <div class="compare-box right">
+      <h4 class="right">デメリット</h4>
+      <ul class="list">
+        <li>サビが発生 → <strong>結露防止・防サビ処理が必要</strong></li>
+        <li>調湿効果なし・気密性が高いため内部に湿気がたまり<strong>結露が発生しやすい</strong> → 断熱対策が必要</li>
+        <li>現場加工が難しく建築コストが高い</li>
+        <li>熱に弱い（耐火仕上げ材が必要）</li>
+        <li>防音性が低い</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>鉄筋コンクリート造（RC造）のメリット・デメリット</h3>
+  <div class="highlight">RC = Reinforced Concrete。鉄筋とコンクリートが互いの弱点を補完。圧縮にも引張にも強い</div>
+  <div class="compare" style="margin-top:10px">
+    <div class="compare-box left">
+      <h4 class="left">メリット</h4>
+      <ul class="list">
+        <li>遮音性に優れる</li>
+        <li>気密性に優れる（省エネ効果）</li>
+        <li>耐震性に優れる（縦横の揺れに強い）</li>
+        <li>耐火性に優れる（コンクリートは不燃材。1,000℃の炎にも強度を保つ）</li>
+        <li><strong>法定耐用年数：47年</strong>（木造の2倍以上）</li>
+      </ul>
+    </div>
+    <div class="compare-box right">
+      <h4 class="right">デメリット</h4>
+      <ul class="list">
+        <li>建築コストが高い（木造の1.5〜2倍）</li>
+        <li>重いため地盤強化が必要な場合あり</li>
+        <li><strong>気密性が高いためカビが発生しやすい</strong> → 十分な換気・結露防止・湿気対策が必要</li>
+        <li>外気の影響を受けやすい（冬寒・夏暑）</li>
+        <li>建設に時間がかかる</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>木造住宅の骨組み名称（参考）</h3>
+  <table>
+    <tr><th>名称（読み）</th><th>役割</th></tr>
+    <tr><td>棟木（むなぎ）</td><td>屋根の骨組みで一番高い部分</td></tr>
+    <tr><td>母屋（もや）</td><td>屋根を支え垂木を受ける部材</td></tr>
+    <tr><td>垂木（たるき）</td><td>棟木・母屋・軒桁の上に渡して屋根の下地を支える</td></tr>
+    <tr><td>梁（はり）</td><td>柱で支えられている横材</td></tr>
+    <tr><td>筋交い（すじかい）</td><td>柱・梁の間に斜めに入った木材。耐震性を高める</td></tr>
+    <tr><td>根太（ねだ）</td><td>大引の上にある部材。主に床材を支える</td></tr>
+    <tr><td>土台（どだい）</td><td>基礎の上に乗った横材。建物全体の重量を支える</td></tr>
+    <tr><td>基礎（きそ）</td><td>地盤の上につくられ、建物全体を支える部分</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>建物・住居内の部位名称</h3>
+  <div class="section-label" style="margin-top:0; margin-bottom:10px">
+    <div class="tag green">和風建築</div>
+  </div>
+  <table>
+    <tr><th>名称（読み）</th><th>説明</th></tr>
+    <tr><td>鼻隠し（はなかくし）</td><td>軒下の先端の部分。屋根の横や下からの雨風が吹き込むのを防ぐ</td></tr>
+    <tr><td>雨樋（あまとい）</td><td>屋根の雨水を集めて排水口に流す設備。横樋（軒樋）・縦樋がある</td></tr>
+    <tr><td>笠木（かさぎ）</td><td>バルコニーや壁の上端に取り付けられる部材。雨水が入りにくい</td></tr>
+    <tr><td>パラペット</td><td>屋上やバルコニー外周部の低い壁（立ち上がり部分）</td></tr>
+    <tr><td>濡れ縁（ぬれえん）</td><td>室外側に設けられた縁側。和風建築に多い</td></tr>
+    <tr><td>水切り（みずきり）</td><td>壁と基礎の間の金属製仕切り板。雨水が土台や基礎へ侵入するのを防ぐ</td></tr>
+    <tr><td>庇・霜よけ（ひさし）</td><td>窓やドアの開口部の上に設けられた小さな屋根</td></tr>
+    <tr><td>破風（はふ）</td><td>切妻屋根の妻側の三角形斜辺部分</td></tr>
+  </table>
+
+  <div class="section-label" style="margin-top:16px; margin-bottom:10px">
+    <div class="tag">和室</div>
+  </div>
+  <table>
+    <tr><th>名称（読み）</th><th>説明</th></tr>
+    <tr><td>障子（しょうじ）</td><td>木製の桟に和紙を張った建具。通気性と採光性に優れる</td></tr>
+    <tr><td>砂壁（すなかべ）</td><td>天然砂や砂石などの色砂を上塗りした壁</td></tr>
+    <tr><td>床の間（とこのま）</td><td>座敷の床を一段高くした場所。掛け軸や草花・香炉を飾る空間。通常は一畳程度</td></tr>
+    <tr><td>床柱（とこばしら）</td><td>床の間の脇に位置する化粧柱</td></tr>
+    <tr><td>天袋（てんぶくろ）</td><td>部屋の天井面に接した場所の戸棚（一般的には和室押し入れ上部の収納）</td></tr>
+    <tr><td>襖（ふすま）</td><td>木製の骨組みに布や紙を張った建具。間仕切りや押し入れに使用</td></tr>
+    <tr><td>押入れ（おしいれ）</td><td>布団などを収納する空間。上下2段が一般的</td></tr>
+    <tr><td>鴨居（かもい）</td><td>襖や障子などの引き戸を設ける場所の上部の横部材（溝あり）</td></tr>
+    <tr><td>敷居（しきい）</td><td>引き戸を下部で受ける溝のある横木</td></tr>
+    <tr><td>畳（たたみ）</td><td>和室の代表的床材。空洞構造で調湿性・防音性に優れる</td></tr>
+  </table>
+
+  <div class="section-label" style="margin-top:16px; margin-bottom:10px">
+    <div class="tag orange">洋室</div>
+  </div>
+  <table>
+    <tr><th>名称（読み）</th><th>説明</th></tr>
+    <tr><td>廻り縁（まわりぶち）</td><td>天井と壁の境目をきれいに見せるために取り付ける部材</td></tr>
+    <tr><td>巾木（はばぎ）</td><td>床と壁の境目がきれいに納まるように取り付ける部材</td></tr>
+    <tr><td>窓枠（まどわく）</td><td>窓の開口部に取り付け、サッシがきれいに納まるようにする枠</td></tr>
+    <tr><td>クレセント</td><td>引違いサッシの施錠金物</td></tr>
+    <tr><td>ケーシング</td><td>壁とドア枠の境目をきれいに納めるために取り付ける部材</td></tr>
+    <tr><td>ドア枠（どあわく）</td><td>内装ドアの開口部に取り付ける枠</td></tr>
+    <tr><td>丁番（ちょうばん）</td><td>ドアの蝶番</td></tr>
+    <tr><td>レバーハンドル</td><td>ドアの把手の一種。一般住宅で最もポピュラー</td></tr>
+    <tr><td>沓摺（くつずり）</td><td>ドア枠の下枠。異なる床材の見切り材として機能</td></tr>
+    <tr><td>ニッチ</td><td>壁の一部を凹ませた飾り棚</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>ドアの種類</h3>
+  <div class="compare">
+    <div class="compare-box left">
+      <h4 class="left">開き戸タイプ</h4>
+      <p>前後に開閉する。室内用として最も一般的。種類：片開き・折り戸・両開き・親子ドア</p>
+    </div>
+    <div class="compare-box right">
+      <h4 class="right">引き戸タイプ</h4>
+      <p>左右にスライド。前後に開かないため狭い空間に最適。開けた状態で固定できる。種類：引き戸・片引き戸・引き違い戸・引き込み戸</p>
+    </div>
+  </div>
+  <div class="def-box" style="margin-top:12px">
+    <dt>玄関ドアの部位（室内側）</dt>
+    <dd>ドアクローザー・ドアアイ・ドアガード・サムターン・フランス落とし（上下）</dd>
+    <dt>玄関ドアの部位（室外側）</dt>
+    <dd>丁番・錠前・郵便投入口</dd>
+  </div>
+</div>
+
+<div class="card">
+  <h3>窓の種類</h3>
+  <table>
+    <tr><th>種類</th><th>特徴</th></tr>
+    <tr><td>引違い窓</td><td>障子が左右に動く最も一般的な窓。大きな開口が取れる</td></tr>
+    <tr><td>縦すべり出し窓</td><td>障子が外へ開く。自由な位置で止められ通風量の調節が簡単</td></tr>
+    <tr><td>上げ下げ窓</td><td>上部FIXで下の障子が上下スライド。バランサーで軽く開閉</td></tr>
+    <tr><td>横すべり出し窓</td><td>障子が外側に開く。開いていても雨が降り込みにくく換気可能</td></tr>
+    <tr><td>FIX窓</td><td>ガラスがはめ込まれただけで開閉機能なし。採光・眺望目的</td></tr>
+    <tr><td>押し出し窓</td><td>上方にスライドして開く</td></tr>
+    <tr><td>欄間窓（小窓）</td><td>上部に設ける小さな窓</td></tr>
+  </table>
+  <div class="def-box" style="margin-top:10px">
+    <dt>窓の部位名称</dt>
+    <dd>枠（かまち）：ガラスを囲む上下左右の枠</dd>
+    <dd>召合せ（めしあわせ）：横や縦の障子・サッシなどで窓が重なり合わさる部分</dd>
+    <dd>クレセント：施錠金物（本体・レバー・補助ロック・キャップ）</dd>
+    <dd>サブロック：補助ロック（押す）</dd>
+    <dd>戸車：障子の下部についている車輪（レール上を走る）</dd>
+  </dd>
+  </div>
+</div>
+
+<div class="card">
+  <h3>間取り記号の意味</h3>
+  <table>
+    <tr><th>記号</th><th>意味</th></tr>
+    <tr><td>1R（ワンルーム）</td><td>一つの部屋にキッチンスペースが含まれた間取り</td></tr>
+    <tr><td>K（キッチン）</td><td>調理をする部屋（1Kは一つの部屋と別に仕切られたキッチンスペース）</td></tr>
+    <tr><td>D（ダイニング）</td><td>食事が主目的の部屋</td></tr>
+    <tr><td>L（リビング）</td><td>居間</td></tr>
+    <tr><td>DK（ダイニングキッチン）</td><td>キッチンとダイニングの機能が共存する部屋</td></tr>
+    <tr><td>LDK（リビングダイニングキッチン）</td><td>リビング・キッチン・ダイニングが1室に共存。DKよりさらに広い</td></tr>
+    <tr><td>S（サービスルーム）</td><td>居室とはいえないが納戸やフリースペースとして使える部屋（3LDK+Sなど）</td></tr>
+  </table>
+</div>
+
+
+<!-- ===== 第5章 第2節 床仕上げ材 ===== -->
+<div class="section-label">
+  <div class="num" style="background:var(--badge-5)">10</div>
+  <h2>第2節　床仕上げ材</h2>
+</div>
+
+<div class="card">
+  <h3>床仕上げ材の要求性能（8項目）</h3>
+  <ul class="list">
+    <li>① 荷重への耐久性（家具の重量に耐える）</li>
+    <li>② 耐摩耗性</li>
+    <li>③ 水回りは吸水性がなく耐水性がある</li>
+    <li>④ 吸音性が良い</li>
+    <li>⑤ 断熱性があり暖房効果が高い</li>
+    <li>⑥ 転倒事故防止のため、軟質で歩きやすくすべりにくい</li>
+    <li>⑦ コストが安く、清掃などメンテナンスがしやすい</li>
+    <li>⑧ 事故が起きにくく、修理が簡単</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>床仕上げ材の種類（大分類）</h3>
+  <table>
+    <tr><th>大分類</th><th>中分類</th><th>具体例</th></tr>
+    <tr><td rowspan="2">繊維系床材</td><td colspan="2">カーペット類</td></tr>
+    <tr><td colspan="2">（ウール・ナイロン・アクリル・ポリプロピレン・ポリエステルなど）</td></tr>
+    <tr><td rowspan="3">木質系床材</td><td colspan="2">フローリング（単層・複合）</td></tr>
+    <tr><td colspan="2">コルク系床材</td></tr>
+    <tr><td colspan="2">リノリウム系床材</td></tr>
+    <tr><td rowspan="2">プラスチック系床材<br><span class="tag orange">弾性床</span></td><td colspan="2">ビニル系床材（床タイル・床シート・クッションフロア）</td></tr>
+    <tr><td colspan="2">ゴム系床材</td></tr>
+    <tr><td rowspan="3">石材・セメント系床材<br><span class="tag">硬質床</span></td><td colspan="2">石質系床材（天然大理石・花崗岩・テラゾーなど）</td></tr>
+    <tr><td colspan="2">陶磁器系床材（セラミックタイル・モザイクタイル・陶器タイル）</td></tr>
+    <tr><td colspan="2">モルタル・レンガ</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>（1）繊維系床材（カーペット）の繊維種類と特徴</h3>
+  <table>
+    <tr><th>繊維</th><th>分類</th><th>特徴</th><th>問題点</th></tr>
+    <tr><td><strong>ウール（羊毛）</strong></td><td>天然・動物性</td><td>吸湿性・通気性・保温性に富む。手触り良い。燃えにくい。染色性が良い。常に湿度があるので静電気を帯電防止</td><td>虫・カビに侵食されやすい。高級品で高価</td></tr>
+    <tr><td><strong>レーヨン</strong></td><td>化学・再生繊維</td><td>染色性が良い。吸湿性・防虫性あり</td><td>耐久性・耐火性に欠ける。現在ではほぼ使われない</td></tr>
+    <tr><td><strong>ナイロン</strong></td><td>化学・合成繊維</td><td>引っ張り・屈折・摩擦強度が最も高い。耐薬品性・耐水性あり。虫・カビへの抵抗性が強い</td><td>静電気が起こりやすい。ピリング（毛玉）ができやすい。高温で軟化溶融。白いものは紫外線で黄変</td></tr>
+    <tr><td><strong>アクリル</strong></td><td>化学・合成繊維</td><td>ウールに似た風合い。ふっくら柔らか。弾性・保温性が良い。吸水性が少ない。耐薬品性・虫・カビへの抵抗性が強い。帯電性が小さい</td><td>毛羽立ちやすい。高温で軟化溶融。火災に弱い（難燃加工品あり）</td></tr>
+    <tr><td><strong>ポリプロピレン</strong></td><td>化学・合成繊維</td><td>最も軽い（比重0.91）。強度に優れる。酸・アルカリなど化学薬品に強い。カビへの抵抗力あり。吸湿性がないので濡れても乾きやすい</td><td>弾力性に乏しい。ピリング発生しやすい。熱に弱い。硬い感触。染料と馴染まないため原着（原料に顔料を加えて着色）で製造</td></tr>
+    <tr><td><strong>ポリエステル</strong></td><td>化学・合成繊維</td><td>合成繊維の中で最も熱に強い。摩擦に強い。シワになりにくい。形状安定性に優れる。日光・薬品に強い。虫・カビに侵されない。吸湿性が少ないため乾きが早い</td><td>伸率が小さく弾性がないためカーペット材としての使用量が少ない</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>繊維の燃焼法による識別（参考・試験に出ることも）</h3>
+  <table>
+    <tr><th>繊維名</th><th>燃え方</th><th>臭い</th><th>灰の状態</th></tr>
+    <tr><td>ウール</td><td>ちぢれながら、くすぶるようにゆっくり燃える</td><td>髪の毛を焼く臭い</td><td>黒褐色の塊で柔らかな灰が残る</td></tr>
+    <tr><td>レーヨン</td><td>引火しやすくパッと紙のように早く燃える</td><td>紙を焼く臭い</td><td>白っぽく軟らかい灰が少し残る</td></tr>
+    <tr><td>ナイロン</td><td>収縮・溶解しながら徐々に燃え、炎を離すと燃え続けない</td><td>セロリのような特有の臭い</td><td>明褐色でガラスのように硬い塊が残る</td></tr>
+    <tr><td>アクリル</td><td>収縮・溶解しながら弱い炎を放って燃える</td><td>肉のこげるような辛苦い臭い</td><td>黒色で硬く不規則な球形を残す</td></tr>
+    <tr><td>ポリプロピレン</td><td>収縮・溶解しながら徐々に燃える</td><td>タールまたはプラスチックを燃やしたときの臭い</td><td>燃え残り部分は光沢のある灰色の硬い球になる</td></tr>
+    <tr><td>ポリエステル</td><td>溶解し、黒煙をあげ煤の多い炎を出して燃える</td><td>甘いバニラのような芳香臭</td><td>溶けて、塊は冷えると硬くなるが熱いうちに引き伸ばすと糸状になる</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>カーペットのテクスチャー（パイルの形状）</h3>
+  <table>
+    <tr><th>大分類</th><th>種類</th><th>特徴</th></tr>
+    <tr><td rowspan="6">カット</td><td>プラッシュ</td><td>パイル長5〜10mm。最も一般的なカットパイル。ソフトな感触</td></tr>
+    <tr><td>ベロア</td><td>パイル長5〜7mm。ベルベットタッチで高級感。深い光沢感</td></tr>
+    <tr><td>サキソニー</td><td>パイル長15mm程度。撚り糸に熱を加えて密に打ち込んだカットパイル。豪華な感じ</td></tr>
+    <tr><td>ハードツイスト</td><td>パイル長10〜15mm。サキソニーより強い撚り。弾力性があり丈夫</td></tr>
+    <tr><td>シャギー</td><td>パイル長25mm以上。太めのパイルを粗く打ち込んだタイプ。装飾性高い</td></tr>
+    <tr><td>ヘアー</td><td>髪の毛を梳でとかしたような形状</td></tr>
+    <tr><td rowspan="3">ループ</td><td>レベルループ</td><td>高さが均一なループ状。耐久性・歩行性に優れる</td></tr>
+    <tr><td>マルチレベルループ</td><td>複数の高さのループパイルで立体的なテクスチャー</td></tr>
+    <tr><td>ハイ/ロールループ</td><td>ループに高低差をつけて立体的に。デザイン性が高い</td></tr>
+    <tr><td rowspan="2">カット&amp;ループ</td><td>ハイカット・ロールループ</td><td>高いループ部分をカット。明確な柄を表現できる</td></tr>
+    <tr><td>レベルカット・レベルループ</td><td>レベルループパイルを部分的にカット。形状の異なった表面が柄を表現</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>（2）木質系床材</h3>
+  <div class="compare">
+    <div class="compare-box left">
+      <h4 class="left">単層フローリング（無垢材）</h4>
+      <ul class="list">
+        <li>一つの材で構成された床材</li>
+        <li>種類：フローリングボード・フローリングブロック・モザイクパーケット</li>
+        <li>フローリングボード：幅75〜110mm・厚さ15〜18mm</li>
+        <li>フローリングブロック：掻き板を横に2枚以上並べて接合。厚さ15〜18mm</li>
+        <li>モザイクパーケット：掻き板の小片を市松模様に並べたもの。厚さ8〜9mm</li>
+      </ul>
+    </div>
+    <div class="compare-box right">
+      <h4 class="right">複合フローリング（住宅の床に最も多く使用）</h4>
+      <ul class="list">
+        <li>広葉樹の単板を熱圧プレスにより積層接着して製造</li>
+        <li>表面：オーク・カバ・ブナなどが多く、現在はオークが過半数</li>
+        <li>表面層の厚さ：0.3〜0.6mm程度が多い</li>
+        <li>厚さ：12〜15mm（12mmのものが多い）</li>
+        <li><strong>WPC加工</strong>（Wood Plastics Combination）：木材の組織にプラスチックを充填し硬化させる加工。表面をより硬く、きず付きにくくする</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>コルク系・リノリウム系床材</h3>
+  <div class="compare">
+    <div class="compare-box left">
+      <h4 class="left">コルク系床材</h4>
+      <ul class="list">
+        <li>300×300mm程度のタイル状。厚さ4〜5mm</li>
+        <li>温かみと弾力のある独特の感触</li>
+        <li>すべりにくく、転倒しても怪我をしにくい</li>
+        <li>反りやあばれなどメンテナンスに労力が必要。表面無塗装品は特に顕著</li>
+      </ul>
+    </div>
+    <div class="compare-box right">
+      <h4 class="right">リノリウム系床材</h4>
+      <ul class="list">
+        <li>原料：亜麻仁油・天然レジン（松ヤニ）・木粉・コルク・顔料・裏打ち材のジュートなど天然素材</li>
+        <li>耐摩耗性・耐薬品性・耐熱性・耐水性・抗菌性に優れる</li>
+        <li><strong class="warn-text">強アルカリに対しては変色するので注意</strong></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>（3）プラスチック系床材（化学床材・弾性床）</h3>
+  <div class="highlight">クッションフロア（KS）：密度650kg/㎥未満の発泡複層ビニル床シート。ソフトな足ざわりと柔軟性が特徴</div>
+  <table style="margin-top:10px">
+    <tr><th>種類</th><th>記号</th><th>概要</th></tr>
+    <tr><td>コンポジションビニル床タイル</td><td>KT</td><td>単層品・バインダー30%未満</td></tr>
+    <tr><td>単層ビニル床タイル</td><td>TT</td><td>単層品・バインダー30%以上</td></tr>
+    <tr><td>複層ビニル床タイル</td><td>FT</td><td>複層品・バインダー30%以上</td></tr>
+    <tr><td>置敷きビニル床タイル</td><td>FOA</td><td>厚み4mm以上</td></tr>
+    <tr><td>薄型置敷きビニル床タイル</td><td>FOB</td><td>厚み4mm未満</td></tr>
+    <tr><td>クッションフロア</td><td>KS</td><td>発�泡複層ビニル床シート・密度650kg/㎥未満</td></tr>
+  </table>
+  <div class="def-box" style="margin-top:10px">
+    <dt>バインダーとは</dt>
+    <dd>塩ビ樹脂・可塑剤・安定剤などからなる接合材。バインダーの含有率が大きいほど弾力性は増すが耐焼けこげ性は低下する</dd>
+    <dt>ゴム系床材</dt>
+    <dd>合成ゴムが主原料。弾力性・耐摩耗性・吸音性・遮音性・ノンスリップ性に優れる。耐油性に乏しく、強アルカリ性に弱い</dd>
+  </div>
+</div>
+
+<div class="card">
+  <h3>（4）石質系床材</h3>
+  <table>
+    <tr><th>種類</th><th>特徴・注意点</th></tr>
+    <tr><td><strong>天然大理石（マーブル）</strong></td><td>石灰岩が変質したもの。炭酸カルシウムを主成分としアルカリ性を示す。<strong class="warn-text">酸性に弱い</strong>。耐摩耗性・耐薬品性が低い。イタリア産が有名（ビアンコカラーラ・ネロマルキーナなど）。岐阜・山口・茨城でも産出</td></tr>
+    <tr><td><strong>花崗岩（御影石）</strong></td><td>地下マグマが地殻内で徐々に冷えて固まったもの。石英・長石・黒雲母が主成分。耐久性・吸水率・耐摩耗性が高い。<strong>酸・アルカリ性に強い</strong>。玄関・通路など歩行者が多い床に使用</td></tr>
+    <tr><td><strong>人造大理石（テラゾー）</strong></td><td>天然石の砕石と顔料をセメントやレジン（樹脂）などのバインダーで固め、研ぎ出して仕上げたもの。駅・オフィス・病院のエントランスなど重歩行空間に多用。セメントテラゾーとレジンテラゾーがある</td></tr>
+    <tr><td><strong>モルタル</strong></td><td>コンクリートスラブに厚さ15〜25mmのセメントモルタルを塗り付けて仕上げ。安価だがひび割れや剥離が生じやすい。玄関・ポーチに使用</td></tr>
+  </table>
+  <div class="warn" style="margin-top:10px">
+    ⚠ <strong>クリーニング注意：</strong>大理石・テラゾー・モルタルは酸性に弱い。花崗岩は酸・アルカリ性に強い。タイルの目地は酸性に弱いので注意
+  </div>
+</div>
+
+<div class="card">
+  <h3>（5）陶磁器系床材</h3>
+  <table>
+    <tr><th>種類</th><th>特徴</th></tr>
+    <tr><td>セラミックタイル</td><td>陶磁器（主に磁器）でできた床材。素焼きのマットなものから鏡面仕上げまで様々。ワックスがほぼ不要。商業施設・オフィス・飲食店にも多用</td></tr>
+    <tr><td>モザイクタイル</td><td>5cm×5cm以下のタイル。磁器質に釉薬を施したものと素地だけのものがある。狭い床や条件の厳しい部分に使用。通常30cm角の台紙を裏面に貼り付けたユニットタイルが主</td></tr>
+    <tr><td>陶器タイル</td><td>焼成温度が低く約1,000℃で本焼き。素地はやや粗く吸水性あり。たたくと濁音を発する</td></tr>
+    <tr><td>レンガ</td><td>粘土に砂を混ぜて練り固め窯で焼いた建築仕上げ材。種類：赤レンガ・歩道レンガ・耐火レンガ・空洞レンガ・アドベなど</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>各床仕上げ材のクリーニング方法（重要）</h3>
+  <table>
+    <tr><th>床材</th><th>クリーニング方法のポイント</th></tr>
+    <tr><td>繊維系（カーペット）</td><td>① 除塵（アップライトバキューム使用）が最重要 → ② 綿パッドクリーニング・エクストラクションクリーニング・シャンプークリーニング → ③ 整毛ブラシで整毛・送風機で乾燥</td></tr>
+    <tr><td>木質系フローリング</td><td>除塵後、洗剤スプレー散布 → 白パッド/綿パッドで洗浄 → モップで拭き取り・リンス → 乾いたモップで乾拭き → 乾燥後に必要に応じワックス塗布。<strong>水分を極力少なく使うことがトラブル防止のポイント</strong></td></tr>
+    <tr><td>プラスチック系（ビニル床材）</td><td>除塵後、洗浄液を含ませたモップで塗布 → ポリッシャーまたはハンドパッドで研磨洗浄 → 床用スクイジー・ウェットバキュームで汚水回収 → モップで水拭き → 乾燥後にワックス塗布</td></tr>
+    <tr><td>石質系</td><td>除塵後、洗浄液を塗布 → ポリッシャー/ハンドパッドで研磨 → ウェットバキューム・床用スクイジーで汚水回収 → 2度モップ/水拭き → 薄ワックスを塗布・十分乾燥。<strong>大理石・テラゾー・モルタルは酸性に弱い。花崗岩は酸・アルカリ性に強い</strong></td></tr>
+    <tr><td>陶磁器系</td><td>石質系と同様の手順。<strong>陶磁器タイル自体は酸・アルカリ性に強いが、タイルの目地は酸性に弱い</strong>ので注意</td></tr>
+  </table>
+</div>
+
+<!-- ===== 第5章 第3節 内壁仕上げ材 ===== -->
+<div class="section-label">
+  <div class="num" style="background:var(--badge-5)">11</div>
+  <h2>第3節　内壁仕上げ材</h2>
+</div>
+
+<div class="card">
+  <h3>内壁仕上げ材の種類（大分類）</h3>
+  <div class="highlight">内壁の仕上げ施工は「張り仕上げ」と「塗り仕上げ」に大別される</div>
+  <table style="margin-top:10px">
+    <tr><th>仕上げ分類</th><th>種類</th><th>特徴・ポイント</th></tr>
+    <tr><td rowspan="5"><strong>張り仕上げ<br>ア. 壁紙張り</strong></td><td>紙系壁紙</td><td>パルプや再生パルプなど紙系の原料が素材。プリント・エンボスなどの加工あり</td></tr>
+    <tr><td>繊維系壁紙</td><td>綿・麻・レーヨンなどセルロース系の天然・再生繊維が主素材。質感に優れ、調湿性・吸音性が期待できるが施工性・メンテナンス性に劣る</td></tr>
+    <tr><td><strong>プラスチック系壁紙</strong></td><td>塩化ビニル樹脂等のプラスチックを主原料。現在では<strong>壁紙全体の生産・使用量の約9割</strong>を占める。耐汚性・メンテナンス性に優れる</td></tr>
+    <tr><td>無機質系壁紙</td><td>無機質紙・無機質骨材・ガラス繊維・金属などの無機質材が主素材。不燃下地に施工した場合は不燃材扱いとなる。防火性能の要求水準が高い場所に使用</td></tr>
+    <tr><td>その他</td><td>木質形壁紙（0.2mm程度の木板に裏打ち紙を張ったもの）・ケイ藻土など自然素材を用いた壁紙など</td></tr>
+    <tr><td><strong>張り仕上げ<br>イ. 木質系板材張り</strong></td><td colspan="2">天然の板材のほか、合板・ファイバーボード（繊維板）などの木質系板材やそれらの化粧板が使われる</td></tr>
+    <tr><td rowspan="2"><strong>張り仕上げ<br>ウ. 無機質系板材張り</strong></td><td>石膏ボード</td><td>石膏を芯材として両面と側面を石膏ボード用原紙で被覆した板材。寸法安定性・施工性・<strong>不燃性・耐火性・断熱性・遮音性</strong>に優れるが、<strong>水分や湿気に弱い（標準品）</strong></td></tr>
+    <tr><td>その他の無機質系板材</td><td>ロックウール板・繊維強化セメント板・木質系セメント板など。内壁・天井に多用</td></tr>
+    <tr><td rowspan="3"><strong>塗り仕上げ</strong></td><td>繊維壁塗り</td><td>糸くず・真綿くず・合成繊維・パルプなどの繊維材と、ふのり・合成樹脂エマルションなどのり剤を用いる仕上げ</td></tr>
+    <tr><td>ドロマイトプラスター塗り</td><td>ドロマイト（苦灰石）＋酸化マグネシウムが原料。施工性は良好だが、硬化後の収縮が大きくひび割れが起きやすい。藁苞などの繊維で補強が必要</td></tr>
+    <tr><td>石膏プラスター塗り</td><td>焼石膏を主原料とした粉状の塗り壁材料。ひび割れしにくい。pHは中性または弱酸性。<strong>耐水性に劣るため湿気・水分の多い場所には適さない</strong></td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>ガラスの種類（内壁・窓材として重要）</h3>
+  <table>
+    <tr><th>種類</th><th>特徴</th></tr>
+    <tr><td>型板ガラス</td><td>溶融ガラス素地をローラーの間に通し模様を押し付けて製造</td></tr>
+    <tr><td>網（線）入りガラス</td><td>ガラス内部に金属製の網または線を挿入した板ガラス。直射日光が当たるなど温度変化が激しい場所では金属とガラスの熱膨張率の違いからひびが入るおそれがあり注意が必要</td></tr>
+    <tr><td>熱線吸収ガラス</td><td>ガラス材料に微量の鉄・ニッケル・コバルトなどを加えて着色した板ガラス。日射光線の20〜60%程度を吸収して室内への射し込みを低下させる。省エネ効果が高い</td></tr>
+    <tr><td>合わせガラス</td><td>複数（通常2枚）の板ガラスの間に透明で強靭なポリビニルブチラール膜（厚さ0.3〜0.4mm）などが圧着されたもの。割れても破片が飛び散りにくい。防音効果が大きい</td></tr>
+    <tr><td>強化ガラス</td><td>フロート板ガラスを加熱炉で600〜700℃近くまで加熱後、急冷した板ガラス。同じ厚さのフロートガラスに対して衝撃や荷重に対し3〜5倍程度の強度。万一割れた場合も破片は粒状になり安全性が高い</td></tr>
+    <tr><td>複層ガラス</td><td>2枚のガラスの中間層（6mmが一般的）に乾燥空気を閉じ込め（乾燥剤を封入）。断熱性を高め、遮音効果も向上し、結露が生じにくくなるなどの効果がある</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>内壁材のクリーニング方法</h3>
+  <table>
+    <tr><th>内壁材</th><th>クリーニング方法のポイント</th></tr>
+    <tr><td>ビニルクロス</td><td>除塵後、洗剤用クロスに専用洗剤を含ませ下から上へ順に塗布（洗剤が乾かない範囲で）。特に汚れの多い部分はスポンジタワシまたはハンドパッドで洗浄。その後洗剤を残さないよう水拭き用クロスで2〜3回拭き上げ。仕上げは乾拭き用クロスで拭き上げる</td></tr>
+    <tr><td>タイル・モザイクタイル</td><td>除塵後、専用器具または洗剤用クロスに専用洗剤を含ませ下から上へ順に塗布 → スポンジタワシで丁寧に擦り洗い → 洗剤分を残さないよう水拭き用クロスで全体を2〜3回拭き上げ → 乾拭き用クロスで拭き上げる</td></tr>
+  </table>
+</div>
+
+<!-- ===== 第5章 第4節 天井仕上げ材 ===== -->
+<div class="section-label">
+  <div class="num" style="background:var(--badge-5)">12</div>
+  <h2>第4節　天井仕上げ材</h2>
+</div>
+
+<div class="card">
+  <h3>天井仕上げ材の要求性能</h3>
+  <ul class="list">
+    <li>① 下地が丈夫で、自重に耐えて落ちない</li>
+    <li>② 不燃性あるいは難燃性の材質を使用する（キッチン・浴室では不燃材料を使用）</li>
+    <li>③ 室内外の騒音を吸音・遮音する性能を有する</li>
+    <li>④ 室内は冷暖房の機会が多いので断熱性が必要</li>
+  </ul>
+  <div class="highlight" style="margin-top:10px">天井仕上げ材は「張り仕上げ」と「塗り仕上げ」に大別される（主に張り仕上げについて出題）</div>
+</div>
+
+<div class="card">
+  <h3>天井仕上げ材の種類（張り仕上げ）</h3>
+  <table>
+    <tr><th>分類</th><th>種類</th><th>特徴・ポイント</th></tr>
+    <tr><td rowspan="6"><strong>ア. 木質系板材</strong></td><td>天然木材（杉・檜・竹など）</td><td>杉は柾目材として秋田杉・吉野杉、杢目材として屋久杉・吉野杉などがある</td></tr>
+    <tr><td>集積材</td><td>人工乾燥された製材板を木目に沿って長さ方向に接着剤で集成。筋割れや木材の不均一性から生ずる狂い・反り・割れなどが少ない</td></tr>
+    <tr><td>プリント合板</td><td>台板合板の上に各種模様・色彩のものを印刷したもの。銘木の美しい木目を再現したものも多い</td></tr>
+    <tr><td>塗装合板</td><td>合板の製造工程で塗装やワックス処理された合板。透明塗料で木目を活かすことが多い。耐水性により1類〜3類の種類がある</td></tr>
+    <tr><td>ファイバーボード（繊維板）</td><td>木材・藁などの植物繊維や廃パルプ材・回収紙を主原料とし加圧成型したもの。種類：①インシュレーションボード（軟質繊維板）②MDF（半硬質繊維板）③ハードボード（硬質繊維板）</td></tr>
+    <tr><td>パーティクルボード</td><td>木材削片を合成樹脂接着剤で熱圧成型した厚手の面材料。強度や収縮などに方向性が少なく均一性に富むが、合板より曲げ性能・クリープなどはやや劣る</td></tr>
+    <tr><td rowspan="3"><strong>イ. 無機質系板材</strong></td><td>ロックウール板</td><td>ロックウール（高炉スラグ・玄武岩などを約1500℃で溶融し遠心力で吹き飛ばして作る細い鉱物性繊維）が主原料。化粧吸音板が代表的</td></tr>
+    <tr><td>石膏ボード</td><td>石膏を芯材として石膏ボード用原紙で被覆した板材。半水石膏（焼き石膏）を二水石膏として板状に固化させて製造。寸法安定性・不燃性・耐火性・遮音性に優れる。水分・湿気に弱い（標準品）</td></tr>
+    <tr><td>セメント板</td><td>①木毛セメント板（木毛とポルトランドセメントを重量比45:55程度で混合し圧縮成型）②木片セメント板 ③石綿セメント板（アスベスト含有→健康被害で社会問題化し現在は法規制あり）</td></tr>
+    <tr><td rowspan="3"><strong>ウ. 金属系板材</strong></td><td>アルミニウム板</td><td>展延性に富み加工性が高い。比重約2.7で軽量なのに強度が大きく耐食性に富む。<strong>酸やアルカリに弱い</strong>。アルマイト板（陽極酸化皮膜処理品）もある</td></tr>
+    <tr><td>ステンレス板</td><td>炭素鋼にクロム（Cr）やニッケル（Ni）を加えた合金（特殊鋼）。クロムを11%以上含有させることでサビにくくなる（耐食性向上）。代表的なものは18-8ステンレス（Cr18%・Ni8%）</td></tr>
+    <tr><td>鋼板類</td><td>亜鉛鋼板など。それらの化粧板・有孔板もある</td></tr>
+    <tr><td><strong>エ. 合成樹脂系板材</strong></td><td colspan="2">合板の表面にメラミン樹脂・ポリエステル樹脂・ジアリルスタレート樹脂等の合成樹脂をオーバーレイ（上部へ敷き重ね）して、耐水性・断熱性・耐摩耗性・耐薬品性及び硬度などの機能性を重視した合板</td></tr>
+    <tr><td rowspan="2"><strong>オ. 紙・布系、ビニル系シート</strong></td><td>紙・布系シート</td><td>防火性・耐汚染性・耐水性・耐摩耗性などで取り扱いにくい点が多い。布系は天然繊維や合成繊維の織物や編み物に紙を裏打ちしたもの</td></tr>
+    <tr><td><strong>ビニル系シート</strong></td><td>塩化ビニル樹脂が主原料。様々な色・意匠・表面テクスチャーが製造できる。耐水性があり汚れても清掃しやすい。耐摩耗性大。内壁・天井仕上げ材として幅広く普及。<strong>ただし通気性・透湿性に乏しいため結露やカビが生じやすい点に注意</strong></td></tr>
+  </table>
+  <div class="warn" style="margin-top:10px">⚠ <strong>石綿（アスベスト）含有建材</strong>：経年劣化により微粉末となって人体に入り、発がん物質としての健康被害が社会問題化。石綿含有建材で建てられた建築物の解体については基準が定められている</div>
+</div>
+
+<div class="card">
+  <h3>天井仕上げ材のクリーニング</h3>
+  <div class="highlight">施工例が多いビニルクロス・プリント合板のクリーニングが出題ポイント</div>
+  <div class="def-box" style="margin-top:10px">
+    <dt>ビニルクロス・プリント合板のクリーニング手順</dt>
+    <dd>① 除塵後、洗剤用クロスに多目的洗剤を含ませ塗布（洗剤が乾かない範囲で塗布することが重要）</dd>
+    <dd>② 汚れの多い部分はスポンジタワシまたはハンドパッドで洗浄もれのないよう洗浄</dd>
+    <dd>③ 洗剤分を残さないよう水拭き用クロスで2〜3回拭き上げ</dd>
+    <dd>④ 仕上げに乾拭き用クロスで素早く拭き上げ、乾燥させる</dd>
+  </div>
+</div>
+
+<!-- ===== 第6章 洗剤 ===== -->
+<div class="chapter-divider">
+  <div class="eyebrow">CHAPTER 6</div>
+  <h2>ハウスクリーニングで使用する洗剤</h2>
+</div>
+
+<div class="section-label">
+  <div class="num" style="background:var(--badge-1)">13</div>
+  <h2>第1節　洗剤の基礎知識</h2>
+</div>
+
+<div class="card">
+  <h3>洗剤の分類（5種類）</h3>
+  <table>
+    <tr><th>種類</th><th>液性</th><th>主成分・代表的な成分</th><th>得意な汚れ・用途</th><th>注意素材</th></tr>
+    <tr><td><strong>中性洗剤</strong></td><td>pH6〜8</td><td>界面活性剤＋ビルダー（助剤）・溶剤など</td><td>軽度の一般汚れ（ほこり・手アカ・軽度の油脂汚れ）。素材を傷めにくく安全面でもメリット</td><td>水が使用できない素材は使用不可</td></tr>
+    <tr><td><strong>アルカリ性洗剤</strong></td><td>pH8〜11（弱アルカリ）<br>pH11超（アルカリ）</td><td>水酸化ナトリウム（苛性ソーダ）・水酸化カリウム・アミノエタノールなど</td><td>油脂汚れ（レンジ周りなど）</td><td>塗装面・木質素材など、アルカリ性に弱い素材</td></tr>
+    <tr><td><strong>酸性洗剤</strong></td><td>pH3〜6（弱酸性）<br>pH3未満（酸性）</td><td>塩酸・クエン酸・シュウ酸など</td><td>水アカ・尿石・石けんカス・サビなどの水回りの汚れ</td><td>金属・大理石など酸性に弱い素材。酸の種類によっては危険なものもあり取り扱い注意</td></tr>
+    <tr><td><strong>漂白剤</strong></td><td>—</td><td>酸化型：塩素系（次亜塩素酸ナトリウム＝次亜塩素酸ソーダ）・酸素系（過炭酸ナトリウム＝過炭酸ソーダ）<br>還元型：二酸化チオ尿素・チオ硫酸ナトリウム</td><td>カビ・細菌の殺菌。漂白効果。還元型は鉄サビ等の酸化によってできた汚れを除去</td><td>塩素系漂白剤：色物繊維や金属・プラスチックへの影響あり。<strong>酸性洗剤と混合すると有毒な塩素ガスが発生（まぜるな危険）</strong></td></tr>
+    <tr><td><strong>研磨剤（クレンザー）</strong></td><td>—</td><td>酸化アルミニウム・珪酸白土類・炭酸カルシウムなど</td><td>水アカ・サビ・こげ付き汚れなど化学作用で分解困難な汚れを「物理的に削る」</td><td>金属やプラスチックなどきずが付きやすい素材への影響があるため、用途に合ったものを選定</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>界面活性剤の構造と作用</h3>
+  <div class="highlight">界面活性剤＝1個の分子の中に<strong>親水基</strong>（水と親しい部分）と<strong>親油基（疎水基）</strong>（油と親しい部分）を持つ化合物</div>
+  <table style="margin-top:10px">
+    <tr><th>作用</th><th>内容</th></tr>
+    <tr><td><strong>ア. 表面（界面）張力の低下作用</strong></td><td>水だけではハジキやすい場合でも、界面活性剤を加えると表面張力が下がってヌレやすくなる。水の表面張力72ダイン/cm → 界面活性剤添加で25〜40ダイン/cmに低下</td></tr>
+    <tr><td><strong>イ. 浸透・湿潤作用</strong></td><td>表面張力を低下させることにより、水が汚れと素材の間に浸透しやすくなる</td></tr>
+    <tr><td><strong>ウ. 乳化作用</strong></td><td>界面活性剤を入れて撹拌すると、油の粒子が小粒となって液中に分散する（乳化）</td></tr>
+    <tr><td><strong>エ. 分散作用</strong></td><td>固体を液中に散らばす現象。界面活性剤を入れて撹拌すると水と親油性の粒子が液中で分散する</td></tr>
+    <tr><td><strong>オ. ミセル形成作用</strong></td><td>ある一定濃度（ミセル臨界濃度：CMC）以上になると、親油基同士を内側にして集まりミセルを形成。CMCを境に界面活性剤溶液の性質が急激に変化する</td></tr>
+  </table>
+  <div class="highlight" style="margin-top:10px">
+    <strong>汚れが落ちる仕組み：</strong>① 油脂系汚れが付着した表面に水を当てても充分な湿潤性が得られない → ② 洗剤を加えると汚れと素材の間に浸透（浸透作用）→ ③ 汚れが界面活性剤分子で覆われると表面は完全に水となじみやすくなり次第に表面から離れる → ④ 界面活性剤に包まれた汚れは外に押し出され液中に細かく分散される（乳化または分散作用）
+  </div>
+</div>
+
+<div class="card">
+  <h3>界面活性剤の分類（イオンの種類による）</h3>
+  <table>
+    <tr><th>種類</th><th>特徴</th><th>主な用途</th></tr>
+    <tr><td><strong>陰イオン界面活性剤<br>（アニオン）</strong></td><td>水溶液中でイオンに解離し、<strong>マイナスイオン（陰イオン）</strong>の部分が界面活性剤の働きをする。石けんや合成洗剤の多くがこのタイプ。<strong>洗浄力や泡立ちに優れる</strong></td><td>台所用洗剤・洗濯用洗剤・カーペット洗剤（アルキル硫酸エステル塩など）</td></tr>
+    <tr><td><strong>陽イオン界面活性剤<br>（カチオン）</strong></td><td>水溶液中でイオンに解離し、<strong>プラスイオン（陽イオン）</strong>の部分が界面活性剤の働きをする。<strong>洗浄力はさほどない</strong>が、特殊な用途に使用。<strong>陰イオン界面活性剤と反応して水に溶けない塩を生成し効果を失うので、一緒に使用できない</strong></td><td>殺菌剤・帯電防止剤・毛髪用リンス剤・繊維用柔軟剤など</td></tr>
+    <tr><td><strong>両性界面活性剤</strong></td><td>同一分子内にマイナスイオンとプラスイオンに解離する構造を持つ。解離の仕方は溶液のpHによってかわる。陰イオン・陽イオン界面活性剤両方の性質を持つ</td><td>洗浄剤・殺菌剤・帯電防止剤など</td></tr>
+    <tr><td><strong>非イオン界面活性剤<br>（ノニオン）</strong></td><td>水溶液中でイオンに解離しないエチレンオキサイド−（CH₂CH₂O）n−や水酸基−OHなどを親水基として持つ。<strong>洗浄力に優れるものがあり、多くの床用洗剤などに用いられる</strong></td><td>床用洗剤・シャンプー・キッチン用洗剤・洗濯用洗剤（陰イオン界面活性剤と併用）</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>洗剤の液性（pH）</h3>
+  <div class="def-box">
+    <dt>pHの定義</dt>
+    <dd>水溶液中の水素イオン濃度を表したもの（pH = −log₁₀（H⁺））。7が中性、7より小さくなると酸性、大きくなるとアルカリ性</dd>
+    <dt>家庭用品品質表示法における液性の区分</dt>
+    <dd>酸性：pH3未満 ／ 弱酸性：pH3以上6未満 ／ 中性：pH6以上8以下 ／ 弱アルカリ性：pH8超11以下 ／ アルカリ性：pH11超</dd>
+  </div>
+  <table style="margin-top:10px">
+    <tr><th>液性</th><th>効果のある汚れ</th><th>注意する素材</th></tr>
+    <tr><td>中性洗剤</td><td>軽度の一般汚れ（ほこり・手アカ・軽度の油脂汚れ）</td><td>特になし（水が使用できない素材は使用不可）</td></tr>
+    <tr><td>アルカリ性洗剤</td><td>油脂汚れ</td><td>塗装面・木など天然素材（アルカリ性の強度によっても異なる）</td></tr>
+    <tr><td>酸性洗剤</td><td>水アカ・尿石・石けんカス・サビなど</td><td>金属・大理石など（酸性の強度によっても異なる）</td></tr>
+  </table>
+</div>
+
+<div class="section-label">
+  <div class="num" style="background:var(--badge-1)">14</div>
+  <h2>第2節　洗剤の種類（用途別）</h2>
+</div>
+
+<div class="card">
+  <h3>用途別洗剤一覧（14種）</h3>
+  <table>
+    <tr><th>洗剤の種類</th><th>液性</th><th>特徴・注意点</th></tr>
+    <tr><td>① 多目的洗剤（万能洗剤・マルチクリーナー）</td><td>中性が多い</td><td>多用途で使用可能。床・壁・ガラス・照明器具など様々な用途に使用。洗浄力はそれほど高くなく対象は軽度の一般汚れ。アルカリ性の多目的洗剤もあるがアルカリ性に弱い素材には注意</td></tr>
+    <tr><td>② 油脂汚れ用洗剤</td><td>アルカリ性（高い）</td><td>レンジ周り（レンジフード・ガスコンロなど）の油脂系汚れを効果的に分解。ステンレスはアルカリ成分が残留すると<strong>アルカリ焼け（成分残留による曇り）</strong>を起こすことがあるため、使用後は十分に水洗いが必要。作業中はゴム手袋等の保護具を着用</td></tr>
+    <tr><td>③ 浴室用洗剤</td><td>中性・酸性・アルカリ性</td><td>中性：大理石や檜の浴槽など酸やアルカリに弱い素材にも使用可。酸性：石けんカスや水アカ汚れに最も洗浄力が優れるが、酸に弱い素材（金属部や鏡・大理石・檜の浴槽など）には十分注意。<strong>塩素系カビ取り剤との併用は有毒な塩素ガスが発生するため絶対に避ける</strong>。アルカリ性：洗浄力と素材への影響のバランスが取れた洗剤</td></tr>
+    <tr><td>④ カビ取り剤</td><td>塩素系（アルカリ性）</td><td>次亜塩素酸ナトリウムを主成分とした「塩素系漂白剤」に分類。殺菌効果＋漂白効果あり。浴室のタイル目地に発生したカビの除去・不活化したカビの色素も漂白できる。<strong>使用の際は換気し、ゴム手袋・マスク・保護メガネを装着</strong></td></tr>
+    <tr><td>⑤ トイレ用洗剤（便器用）</td><td>中性・酸性・塩素系</td><td>ハウスクリーニングで使用されるものの多くは尿石や水アカの除去に優れた<strong>酸性タイプ</strong>。「尿石除去剤」として販売されている製品も酸性のトイレ用洗剤に分類。塩酸の濃度が10%を超えるものもあり医薬用外劇物になっているものもある。<strong>酸性のトイレ用洗剤と塩素系の混合は有毒な塩素ガスが発生するため絶対に避ける</strong>。便座・便蓋・温水洗浄便座の操作パネルなど便器以外には使用しない</td></tr>
+    <tr><td>⑥ エアコン用洗剤</td><td>中性・アルカリ性</td><td>中性：アルミフィンを傷める心配がない。アルカリ性：油脂汚れにも効果が高く洗浄力に優れるが、<strong>アルミフィンを傷めることがあるので洗浄後は酸剤による中和や十分な濯ぎが必要</strong></td></tr>
+    <tr><td>⑦ ガラス用洗剤</td><td>中性・アルカリ性</td><td>ハウスクリーニングで使用されるものの多くは手アカやタバコのヤニ汚れの除去に優れた<strong>アルカリ性タイプ</strong>。除去が困難な水アカ汚れなどはガラス用クレンザーが効果的。特殊加工されたガラス・鏡・テレビ画面など液晶製品などは洗剤の使用を避ける</td></tr>
+    <tr><td>⑧ クレンザー</td><td>—</td><td>水アカやこげ付き汚れなどを研磨の作用で除去する。金属やプラスチックなどきずが付きやすい素材への影響があるため用途に合ったものを選定。研磨剤を成分として使用している洗剤はクレンザーの他に「金属磨き剤」などがある</td></tr>
+    <tr><td>⑨ 床用洗剤</td><td>中性・アルカリ性</td><td>中性：汚れが軽度な場合やアルカリ性に弱い床素材に使用。アルカリ性：中性より洗浄力に優れ、ワックスが塗布されている床面の表面洗浄の際に使用されることが多い</td></tr>
+    <tr><td>⑩ カーペット用洗剤</td><td>中性が多い</td><td>ウール等の天然繊維はアルカリ性洗剤によって黄変することがあるため、カーペット用洗剤の多くは中性。ただし中にはアルカリ性のものもあり、ウールなどの天然繊維への使用は避ける。起泡性に優れたタイプと消泡性に優れたタイプがありクリーニング方式によって洗剤を選定する</td></tr>
+    <tr><td>⑪ カーペット用シミ取り剤</td><td>各種</td><td>シミ汚れの種類によって適切なものを選定。種類：水性シミ取り剤・油性シミ取り剤・漂白系（酸素系）シミ取り剤。漂白系（酸素系）は繊維素材の種類や染色方法によっては使用できないカーペットもあるので注意</td></tr>
+    <tr><td>⑫ 除菌用洗剤</td><td>中性・アルカリ性</td><td>汚れの除去と除菌が同時に行えるもの。ドアノブや手すりなど人がよく触れる部位の除菌清掃として使用。中性のものが日常清掃で使用される場合が多い</td></tr>
+    <tr><td>⑬ 特殊用途洗剤</td><td>各種</td><td>排水口用洗剤（水酸化ナトリウムや次亜塩素酸ナトリウムを成分としたアルカリ性が強いものが多い。医薬用外劇物のものもあり、ゴム手袋・マスク・保護メガネを装着）。金属磨き剤（研磨剤入り。使用後に金属表面に保護膜が形成され艶出し・汚れ防止効果が得られる）。サビ除去剤（シュウ酸を主成分とした酸性洗剤。酸に弱い素材には使用不可）。落書き落とし剤（溶解力の高い溶剤が主成分。塗装面やビニルレザーなどに使用する場合は注意）。消臭剤（たばこ・生ごみ・ペット・カビなど臭いの種類も様々。まず臭いの原因となる汚れをできるだけ除去してから行う）</td></tr>
+    <tr><td>⑭ 床用ワックス</td><td>—</td><td>「樹脂ワックス」「水性ワックス」「油性ワックス」「乳化性ワックス」がある。最も多く使用されているのが合成樹脂を主成分とした<strong>樹脂ワックス</strong>。床に樹脂ワックスを塗布することで「艶出し」「床材の保護」「汚れ防止」の効果が得られる。床材に適したワックスを選定しないとトラブルを招くことがある</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>洗剤使用上の6つの注意点（試験頻出）</h3>
+  <table>
+    <tr><th>No.</th><th>注意点</th><th>ポイント</th></tr>
+    <tr><td>①</td><td>用途や目的にあった洗剤を選択して使用する</td><td>選定を誤ると汚れが除去できなかったり、材質を傷めることがある</td></tr>
+    <tr><td>②</td><td>異なる洗剤を混ぜて使用することは避ける</td><td>効果を打ち消し合ったり、成分が反応して危険な物質を生成することがあるため、むやみに混ぜて使用してはならない</td></tr>
+    <tr><td>③</td><td>指定された希釈濃度を厳守して使用する</td><td>不必要に濃くしても充分な効果が発揮できなかったり、材質を傷めることもある。計量容器なども用いて正しく希釈する</td></tr>
+    <tr><td>④</td><td>材質によって変色等の問題が生じるので注意する</td><td>特にアルカリ性や酸性の洗剤を使用する際は注意。影響の有無が判断できない場合はあらかじめ目立たない場所で確認してから使用する</td></tr>
+    <tr><td>⑤</td><td>洗浄後は、洗剤成分を残留させない</td><td>洗剤成分が残留すると汚れが付きやすくなるので、洗浄後は十分に水洗いや水拭き等を行い洗剤成分を取り除く</td></tr>
+    <tr><td>⑥</td><td>洗剤を使用する際は、保護具を着用する</td><td>使用状況に応じ保護用の手袋・メガネ・マスクなどを着用する。特にアルカリ性や酸性の強い洗剤を使用する際は必ず着用する</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>第6章 試験頻出ひっかけポイント</h3>
+  <table>
+    <tr><th>テーマ</th><th>誤り（×）</th><th>正しい（○）</th></tr>
+    <tr><td>界面活性剤の作用</td><td>表面張力を<strong>増加</strong>させる作用がある</td><td>表面張力を<strong>低下</strong>させる作用がある</td></tr>
+    <tr><td>陽イオン界面活性剤</td><td>洗浄力が高く台所用洗剤に広く用いられる</td><td>洗浄力はさほどない。殺菌剤・帯電防止剤・柔軟剤に用いられる</td></tr>
+    <tr><td>陰イオン界面活性剤</td><td>プラスイオンの部分が働く</td><td><strong>マイナスイオン（陰イオン）</strong>の部分が界面活性剤として働く</td></tr>
+    <tr><td>カビ取り剤の主成分</td><td>塩酸（または酸性）</td><td><strong>次亜塩素酸ナトリウム</strong>（塩素系・アルカリ性）</td></tr>
+    <tr><td>漂白剤の分類</td><td>次亜塩素酸ナトリウムは還元型漂白剤</td><td>次亜塩素酸ナトリウムは<strong>酸化型・塩素系</strong>漂白剤</td></tr>
+    <tr><td>洗剤の混合</td><td>相乗効果で必ず洗浄力が高まるため積極的に混ぜてよい</td><td><strong>混ぜてはいけない</strong>。効果を打ち消し合ったり危険な物質が生成されることがある</td></tr>
+    <tr><td>塩素系＋酸性洗剤</td><td>混合しても特に問題ない</td><td><strong>有毒な塩素ガスが発生する（まぜるな危険）</strong></td></tr>
+    <tr><td>トイレ用洗剤の液性</td><td>中性が多い</td><td>ハウスクリーニングでは尿石・水アカ除去に優れた<strong>酸性タイプが多い</strong></td></tr>
+    <tr><td>ガラス用洗剤</td><td>中性タイプが多い</td><td>ハウスクリーニングでは手アカ・ヤニ汚れ除去に優れた<strong>アルカリ性タイプが多い</strong></td></tr>
+    <tr><td>ステンレスとアルカリ洗剤</td><td>洗浄後に特別な処理は不要</td><td>アルカリ成分が残留すると<strong>アルカリ焼け（曇り）</strong>が起きるため、使用後は十分に水洗いが必要</td></tr>
+    <tr><td>洗剤の希釈濃度</td><td>濃くするほど洗浄力が増すので濃い方がよい</td><td>不必要に濃くしても充分な効果が発揮できなかったり材質を傷めることもある。<strong>指定された希釈濃度を厳守する</strong></td></tr>
+    <tr><td>カーペット用洗剤</td><td>洗浄力の高いアルカリ性が最適</td><td>ウール等の天然繊維はアルカリ性洗剤で<strong>黄変</strong>するため、カーペット用洗剤の多くは<strong>中性</strong></td></tr>
+  </table>
+</div>
+
+<!-- ===== 第7章 機器 ===== -->
+<div class="chapter-divider">
+  <div class="eyebrow">CHAPTER 7</div>
+  <h2>ハウスクリーニングで使用する機器</h2>
+</div>
+
+<div class="section-label">
+  <div class="num" style="background:var(--badge-2)">15</div>
+  <h2>第1節　器具・資材（13カテゴリ）</h2>
+</div>
+
+<div class="card">
+  <h3>① クロス類（拭く資材）</h3>
+  <table>
+    <tr><th>種類</th><th>特徴・用途・ポイント</th></tr>
+    <tr><td>綿クロス</td><td>古くから清掃用具として一般的に使用。吸水性に富み、汚れ除去・水分拭き上げなどあらゆるシーンに使用。薄手は安価で狭い・細かい場所に、厚手は吸水量が多い</td></tr>
+    <tr><td><strong>マイクロファイバークロス</strong></td><td>髪の毛の100分の1程度の極細繊維（マイクロファイバー）を使用。ポリエステルやナイロンなどの化学繊維が主。繊維断面がエッジの効いた形状で<strong>汚れの掻き取り効果に優れる</strong>。素早い吸水性。水拭きの際も拭き跡が少なく美しく仕上がる。乾拭きで使用すると静電気で細かいほこりを吸着。<strong>小まめに洗浄しないと汚れや皮脂などが繊維に残り雑菌が繁殖し臭いやすくなる。化学繊維のため熱に弱く、乾燥機の使用はできるだけ避ける</strong></td></tr>
+    <tr><td>化学雑巾</td><td>吸着剤と呼ばれる薬品を含侵させたクロス。家具など水を使用できない場合の除塵に用いる。吸着剤を含ませて使用するタイプは吸着剤の量が過多にならないように注意</td></tr>
+    <tr><td>吸水クロス（セームタオル）</td><td>吸水性に非常に優れたクロス。セルロース製やPVA（ポリビリルアルコール）製など各種あり。PVA製はセームタオルとも呼ばれる</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>② スポンジ・たわし・パッド類（こびりついた汚れをこすり落とす資材）</h3>
+  <table>
+    <tr><th>種類</th><th>特徴・用途・ポイント</th></tr>
+    <tr><td>スポンジたわし</td><td>軟らかい発泡ウレタンに研磨性の高い不織布パッドを貼り合わせたものが主流。発泡ウレタン部分は洗剤の含みがよく泡立ちに優れ素材を傷めることが少ない。不織布パッド部分はこびりついた汚れの除去に優れる。研磨粒子を含むものと含まないものがある</td></tr>
+    <tr><td>ネットスポンジ</td><td>発泡ウレタンスポンジをナイロン製などのネットで包んだもの。ネット素材の掻き取り力でこびりついた汚れ除去に優れる</td></tr>
+    <tr><td><strong>メラミンスポンジ</strong></td><td>メラミン樹脂を発泡させたスポンジ。汚れの掻き取り力に優れ、<strong>水だけでも汚れの除去に優れる</strong>。ただしプラスチックなど軟らかい素材に使用すると細かいきずが付くため注意</td></tr>
+    <tr><td>亀の子たわし</td><td>ヤシの繊維でつくられたたわし状の資材。こすり洗いしやすく天然素材で環境にも優しい</td></tr>
+    <tr><td>ステンレスたわし</td><td>ステンレス製の繊維で作られたたわし状の資材。金属繊維のため汚れの掻き取り力に優れ、焼きこげなどもこびりついた汚れも除去しやすい。ただしプラスチックなど軟らかい素材に使用すると細かいきずが付くため注意</td></tr>
+    <tr><td>不織布パッド</td><td>ポリエステルやナイロンなどの化学繊維でできた不織布に研磨粒子を固着させた資材。洗剤の含みも良くこすり洗いしやすい。不織布材質と研磨粒子の硬さ（種類）・大きさにより様々な研磨力を有する製品がある</td></tr>
+    <tr><td>サンドペーパー（耐水ペーパー）</td><td>いわゆる紙やすり。研磨粒子の硬さ（種類）や大きさにより様々な研磨力を有する。紙状・スポンジ状などの製品がある</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>③ ブラシ・ハケ類（細い繊維で汚れを除去する資材）</h3>
+  <table>
+    <tr><th>種類</th><th>特徴・用途・ポイント</th></tr>
+    <tr><td>ハンドブラシ</td><td>凹凸のある素材表面の汚れ除去に有効。毛の材質はポリプロピレン・ナイロン・塩ビ・豚毛・ステンレス繊維など多くの種類がある</td></tr>
+    <tr><td>サッシブラシ</td><td>ブラシ部分の毛が長いため窓サッシレールの汚れ除去がしやすい形状のブラシ。柄の先端はヘラのような形状で汚れの掻き取り除去がしやすい</td></tr>
+    <tr><td>ガスブラシ</td><td>ガスバーナーの清掃に使用しやすい資材。真鍮製ブラシ（バーナーキャップやこげ落とし用）とナイロンブラシ（こびりついた汚れの除去）に分かれる。柄の部分にはキリ状の突起とヘラ状の部分があり、ガス穴の目詰まりやこげなどを除去できる</td></tr>
+    <tr><td>トイレブラシ</td><td>トイレ便器内を清掃する資材。柄の長いもの・短いもの、先端はスポンジ・不織布パッド・ブラシのものなど様々な形状がある</td></tr>
+    <tr><td>シミ取りブラシ</td><td>カーペットやソファーなど繊維表面のシミ汚れを除去する際に使用。対象面をこすって使用するのではなく、叩きながら使う。クロスを巻いて使う</td></tr>
+    <tr><td>デッキブラシ</td><td>凹凸のある床面の清掃に有効。毛の硬さ（材質）やサイズなど様々な製品がある</td></tr>
+    <tr><td>ハケ</td><td>洗剤などの塗布に使用する資材。細かい溝などの汚れ除去にも有効</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>④ モップ類（床面に洗剤・ワックスを塗布する、汚れや水分を除去する資材）</h3>
+  <table>
+    <tr><th>種類</th><th>特徴・用途・ポイント</th></tr>
+    <tr><td>ラーグモップ（糸モップ）</td><td>床面の清掃に最も一般的に使用される資材。房状の糸が縫製された形状。洗剤液の塗布、こすり洗い、水拭き、乾拭きなど多くの用途に使用</td></tr>
+    <tr><td>フラットモップ（平モップ）</td><td>平たい形状のモップ。マイクロファイバーが使用されたものも多く、水分の拭き取り力に優れており仕上がりが良い</td></tr>
+    <tr><td>ワックスラーグ（フラッシュモップ）</td><td>樹脂ワックスを塗布する際に使用される資材。ワックス液の含みが良く塗りムラが出にくい</td></tr>
+    <tr><td>化学モップ</td><td>吸着剤を含侵させたモップ。床面のほこりや土砂の除去力に優れる。木床など水を使用しにくい場合にも有効</td></tr>
+    <tr><td>静電気ほこり取り</td><td>帯電性のある繊維を使用してハタキ状につくられた資材。繊維をこすり合わせて帯電させ静電気の力で細かいほこりを吸着する。家具表面・電化製品表面のほこりの除去に有効</td></tr>
+    <tr><td>吸水モップ</td><td>吸水力に優れるスポンジを活用した資材。水分の回収作業に有効。乾くと固くなり吸水しにくくなるため、湿った状態で保管すると良い</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>⑤ ホウキ・チリトリ類　⑥ スクイジー類（主要なもの）</h3>
+  <div class="compare">
+    <div class="compare-box left">
+      <h4 class="left">ホウキ・チリトリ（土砂やほこりを除去）</h4>
+      <ul class="list">
+        <li>長柄ボウキ：床面の除塵作業に有効</li>
+        <li>自在ボウキ：短かく密に植毛された毛先により細かいほこりや土砂まで集める</li>
+        <li>不織布クロス・ダスタークロス・フロアクロス：細かいほこりも残さず回収できる</li>
+        <li>文化チリトリ：長い柄とフタが特徴。床に置くとフタが開き、持ち上げるとフタが閉まるため、ごみがこぼれにくい</li>
+        <li>三ツ手チリトリ：しゃがまずに使える長柄。深いものは汚水回収にも活用</li>
+      </ul>
+    </div>
+    <div class="compare-box right">
+      <h4 class="right">スクイジー類（窓ガラスや床面の水分を効果的に除去）</h4>
+      <ul class="list">
+        <li>ハンドスクイジー：まっすぐで滑らかなゴム製のブレード部分により窓ガラスなどの平らな表面の水分を効果的に取り除く</li>
+        <li>シャンパー：窓ガラス表面などに洗剤液を塗布する際に使用。T字型ハンドルに洗剤液の含みの良い繊維製モップ部分が被れており、スクイジーとセットで使用</li>
+        <li>フロアスクイジー：床用スクイジー。床洗浄後の汚水回収・雨漏りなどの漏水時に床面の水を取り除く</li>
+        <li>延長ポール：高所のガラス清掃などの作業で使用する長さのある柄。1mから10m近い製品もある</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>⑦ スクレーパー類（ヘラ状、対象面の汚れなどを除去）</h3>
+  <table>
+    <tr><th>種類</th><th>特徴・用途</th></tr>
+    <tr><td>スクレーパー（ステンレス製）</td><td>金属（主にステンレス）製のスクレーパー（ヘラ）。床面や壁面などにこびりついた汚れを削り落とす際に使用</td></tr>
+    <tr><td>スクレーパー（プラスチック製）</td><td>プラスチック（樹脂）製。比較的軟らかい材質の表面の汚れを削り落とす際に使用</td></tr>
+    <tr><td>ガラス用スクレーパー</td><td>ステッカーなどガラス表面にこびりついているものをはがし落とす際に使用する器具。カッターの刃の形状をしており、<strong>先端に鋭利な刃があるため取り扱いには十分注意</strong></td></tr>
+    <tr><td>ポリッシュバー</td><td>セラミック材質でできた小型スクレーパー。水栓まわりの水アカ汚れなどの除去に有効</td></tr>
+    <tr><td>シロッコファン用ケレン</td><td>レンジフードのシロッコファンに付着した汚れをかき取る際に使用しやすい形状の器具</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>⑧ 容器類　⑨ スプレー類</h3>
+  <table>
+    <tr><th>種類</th><th>概要</th></tr>
+    <tr><td>バケツ・計量バケツ</td><td>水を貯めて運んだり汚水を入れたりする容器。計量バケツは目盛り付きで洗剤の希釈液を作成する際に使用</td></tr>
+    <tr><td>計量カップ</td><td>洗剤希釈液を作成する際などに使用する目盛り付きの容器。耐薬品性の高いポリエチレン製・ポリプロピレン製がある</td></tr>
+    <tr><td>モップ絞り器（リンガー）</td><td>モップを絞る器具</td></tr>
+    <tr><td>ワックストレイ</td><td>樹脂ワックスを塗布する際に使用する器具。溶液を溜める部分と、モップに含ませた液量を調節する網棚により構成される</td></tr>
+    <tr><td>スプレーヘッド</td><td>洗剤を噴霧する器具。霧タイプ・泡タイプなどがある</td></tr>
+    <tr><td>加圧スプレーヤー</td><td>容器内に薬剤液を入れ、ハンドルを手押しして容器内を加圧し、その圧力でスプレー噴霧する器具。広い範囲を連続スプレーする作業に使用すると効果的</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>⑩ 養生類　⑪ 保護具類</h3>
+  <div class="compare">
+    <div class="compare-box left">
+      <h4 class="left">養生類（作業対象面や床面などの損傷を防ぐ資材）</h4>
+      <ul class="list">
+        <li>防水シート・床養生シート：床面を保護するシート。ブルーシートなど</li>
+        <li>マスキングテープ・養生用テープ：薬剤散布やワックス塗布の際、施工対象場所以外の部分を汚さないように保護（養生）するテープ。<strong>使用後にはがすことを前提としているため粘着力が弱く、はがした時に糊残りがない</strong>ものを選定する</li>
+        <li>マスカー：ポリシートとマスキングテープが一体となったテープ付き養生シート</li>
+        <li>養生用ポリシート：主に90cm・180cm幅のロール状ポリシート</li>
+      </ul>
+    </div>
+    <div class="compare-box right">
+      <h4 class="right">保護具類（様々な危険から身体を守る資材）</h4>
+      <ul class="list">
+        <li>ゴム手袋：天然ゴム製・ニトリルゴム製・薄手・厚手・裏起毛など種類が様々</li>
+        <li>軍手：切りきず・擦りきずなどの怪我防止のために着用する編み手袋。丈夫で安価な作業用手袋</li>
+        <li>保護メガネ：作業時に薬剤の飛散やほこり・ごみ・汚れなどから眼を保護する。メガネ型・ゴーグル型がある</li>
+        <li>保護マスク：作業時に薬剤やほこり・菌などの吸入を防ぐ呼吸用保護具。不織布マスク・防じんマスク・防毒マスクなど</li>
+        <li>安全ヘルメット：落下物・衝撃から頭部を保護。高所作業・落下物が発生する可能性のある場所・転落や転倒の危険性のある作業で着用</li>
+        <li>墜落制止用器具（安全帯）：高所作業の場合は着用が必須。胴ベルト型・フルハーネス型がある</li>
+        <li>長靴：足元がひどく濡れる作業の場合に使用。バスブーツ（浴室内での作業の際に使用）もある</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>⑫ 工具類　⑬ その他の器具・資材</h3>
+  <table>
+    <tr><th>種類</th><th>概要・ポイント</th></tr>
+    <tr><td>ドライバー（マイナス・プラス）</td><td>ネジを締める・緩めるための「ねじ回し」の工具。回すネジのサイズに合うドライバーを使用</td></tr>
+    <tr><td>電動ドライバー</td><td>モーターの力で軸を回転させる電動式ドライバー。インパクトドライバー（ネジ締め）・ドリルドライバー（穴あけ）など各種ある</td></tr>
+    <tr><td>レンチ・スパナ</td><td>ボルトやナットを締める・緩める工具。日本では先端が開いているものを「スパナ」、ふさがっているものを「レンチ」と呼ぶのが一般的</td></tr>
+    <tr><td>ラバーカップ</td><td>トイレなどの排水口の詰まりを解消する器具。和式用・洋式用・節水型がある</td></tr>
+    <tr><td>ドレンホースクリーナー</td><td>エアコンのドレインホースの詰まりを解消する器具（＝サクションポンプ）</td></tr>
+    <tr><td>はしご</td><td>高いところへ登ったり降りたりするために使用する器具。<strong>はしごは脚立と違い自立できないので壁などに立てかけて使用。地面との角度が75度になるように立てかけるのが最も安全。はしごは自立できないため、1人で使用することは厳禁。必ず支える補助者が必要</strong></td></tr>
+    <tr><td>脚立</td><td>両側からはしこを合わせ上に板を乗せたもので自立できる形状。踏台より高いものが「脚立」と呼ばれる。<strong>天板が小さいために安全面から天板に乗ることは禁止</strong></td></tr>
+    <tr><td>踏台</td><td>天板までの高さが80cm未満で、天板の面積が広く安全に乗ることができるもの</td></tr>
+    <tr><td>足場台</td><td>天板の幅が広く長さもあり、天板の上に乗って作業することができる踏台</td></tr>
+    <tr><td>pH試験紙</td><td>指示薬を染み込ませた紙で、紙の色の変化から液体中の水素イオン濃度（pH）を測ることができる。類似のリトマス紙はpH強さの判別はできない</td></tr>
+  </table>
+</div>
+
+<div class="section-label">
+  <div class="num" style="background:var(--badge-2)">16</div>
+  <h2>第2節　機器類</h2>
+</div>
+
+<div class="card">
+  <h3>① バキューム類（掃除機類）</h3>
+  <table>
+    <tr><th>種類</th><th>特徴・ポイント</th></tr>
+    <tr><td>キャニスター型</td><td>一般的には家庭用が主で、ホースを引っ張って移動させる形式のタイプ。背が低い家具が多い和室の掃除に適している。押し入れなどへの収納にも便利</td></tr>
+    <tr><td><strong>ポット型（ドライ専用／乾湿両用）</strong></td><td>家庭用・業務用として一般的な形のもの。本体上部にバキュームモーターが内蔵されており、下部がダストバケット部で中にダストフィルターがセットされている。<br><strong>ドライ専用のものは水分がモーター部に入ると損傷することがあるため吸水はできない</strong>。HEPAフィルターを装着し超微細粉塵を捕集する高性能なタイプやサイクロン型もある。<br><strong>乾湿両用のものは吸水作業に用いることができ、床洗浄・離作業の際の汚水回収などに使用されることが多い。排気がモーターを通過せずに外部へ放散され、モーターは専用ファンで冷却される仕組み</strong></td></tr>
+    <tr><td>アップライト型</td><td>縦に長い本体と、底面の床用吸い込み口が一体化した形状の掃除機。モップのように手軽に使用できる</td></tr>
+    <tr><td>スティック型</td><td>アップライト型と同様。モップのように手軽に使用できる</td></tr>
+    <tr><td>背負い型（バックバックバキューム）</td><td>リュックのように背負って使用する掃除機。本体を背負うため両手が開き作業しやすく、また疲労感が少ない</td></tr>
+  </table>
+  <div class="warn" style="margin-top:8px">⚠ <strong>試験頻出：</strong>ポット型ドライ専用は吸水不可。乾湿両用は吸水可能で汚水回収に使用</div>
+</div>
+
+<div class="card">
+  <h3>② 洗浄機類</h3>
+  <table>
+    <tr><th>種類</th><th>特徴・ポイント</th></tr>
+    <tr><td><strong>ポリッシャー（床磨き機）</strong></td><td>床を洗浄する際に使用する機械。円形の洗浄ディスク（ブラシやフロアパッド）を取り付け低速で回転させ、自重と回転力で洗浄を行う</td></tr>
+    <tr><td><strong>自動床洗浄機</strong></td><td>洗浄液散布、洗浄、汚水回収作業を1台で実施できる床洗浄専用の機械。この3つの工程を一台で同時に行うことで省力化と作業効率及び洗浄品質の向上を実現できる。洗浄方式には円形ディスク式・振動式・シリンダーブラシ式などのタイプがある</td></tr>
+    <tr><td><strong>エクストラクター（カーペットすすぎ洗い機・リンサー）</strong></td><td>カーペットの洗浄やすすぎ洗いに使用する機械。ウォンドの先端ノズルから洗浄液を高圧で噴射して対象素材を洗浄すると同時にバキューム機能で汚水を吸引回収することで、カーペットパイルの汚れを取り除く</td></tr>
+    <tr><td>ハンドポリッシャー</td><td>ガラス面や石材表面の研磨作業や艶出し作業に使用する高速回転の機械</td></tr>
+    <tr><td>高圧洗浄機</td><td>高圧水を吐出させて対象面の汚れを除去する機械</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>③ 送風機類（乾燥作業などに使用）</h3>
+  <table>
+    <tr><th>種類</th><th>特徴・ポイント</th></tr>
+    <tr><td>扇風機型送風機</td><td>プロペラ型の羽根を回転させて風を送るタイプ。首を左右に振ることができ、近距離ではあるが比較的広い範囲のエリアに風を送ることができる</td></tr>
+    <tr><td><strong>シロッコファン型送風機</strong></td><td>シロッコファン（多翼回転羽根）を回転させて風を送るタイプ。空気を押し出す力が強いため、比較的遠距離まで風を送り出すことができる。<strong>長い通路などの乾燥作業に使用すると効果的</strong></td></tr>
+    <tr><td>ブロア</td><td>局所に強い風を送り出すことができるガン型の送風機</td></tr>
+    <tr><td>ドライヤー</td><td>温風を出して乾燥させる送風機</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>④ その他機器類（試験関連ポイント）</h3>
+  <table>
+    <tr><th>種類</th><th>特徴・ポイント</th></tr>
+    <tr><td>漏電遮断器（漏電ブレーカー）</td><td>漏電による漏れ電流を検知して電気経路を自動的に遮断する機能を持つ器具。過負荷や短絡（ショート）による過電流を遮断する機能が付いているものもある</td></tr>
+    <tr><td>延長コードリール</td><td>電源コードを円筒状に巻いて収納できる延長コード。<strong>コードを巻いたままの状態で使用すると発熱しやすいため、基本的にコードを全て引き延ばした状態で使用する。定格電流を超えない範囲で使用する。屋内用を屋外で使わない</strong></td></tr>
+    <tr><td>パイプヒーター（加熱器）</td><td>容器にためた水を加熱する際に使用する器具。パイプ型のものは空焚きにより発火事故に繋がる危険があるため、<strong>ICコントロールヒーターなど空焚き防止機能のあるものを選定する</strong></td></tr>
+  </table>
+  <div class="highlight" style="margin-top:10px">
+    <strong>電気容量の知識（試験頻出）：</strong>1つのコンセントから使用できるのは最大<strong>15A（1500W）まで</strong>。一般家庭の1回路は2000W程度。30A・3000Wは誤り。
+  </div>
+</div>
+
+<!-- ===== 第8章 基本作業 ===== -->
+<div class="chapter-divider">
+  <div class="eyebrow">CHAPTER 8</div>
+  <h2>ハウスクリーニングの基本作業</h2>
+</div>
+
+<div class="section-label">
+  <div class="num" style="background:var(--badge-3)">17</div>
+  <h2>第1節　基本作業</h2>
+</div>
+
+<div class="card">
+  <h3>物理的除去と化学的除去</h3>
+  <table>
+    <tr><th>除去の方法</th><th>内容</th></tr>
+    <tr><td><strong>物理的に除去する方法</strong></td><td>ほうき、タオル、真空掃除機、スクレーパーなどの資材・器具や機械を用いて除去する</td></tr>
+    <tr><td><strong>化学的に除去する方法</strong></td><td>水、洗剤、有機溶剤などの薬剤を用いて除去する</td></tr>
+  </table>
+  <table style="margin-top:10px">
+    <tr><th>作業の区分</th><th>内容</th></tr>
+    <tr><td><strong>清掃の基本作業</strong></td><td>掃く・拭く・洗う・吸い取る・削り取る</td></tr>
+    <tr><td><strong>清掃の付随作業</strong></td><td>塗る・磨く・乾かす</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>HC資機材基本セット</h3>
+  <div class="highlight">（公社）全国ハウスクリーニング協会が推奨する、どの現場に赴く際でも必ず用意する資機材</div>
+  <div class="def-box" style="margin-top:10px">
+    <dt>HC資機材基本セットの内容</dt>
+    <dd>養生シート・養生マット・養生テープ・養生マスカー・タオル（洗剤用・水拭用・乾拭用）・マイクロファイバークロス・上履き・長靴・保護手袋・マスク・ポリバケツ・スポンジタワシ・ハンドパッド・メラミンスポンジ・パテナイフ・ハンドスプレー（キャニオンスプレー）・ごみ袋・計量カップ・ドライバー（プラス・マイナス）</dd>
+  </div>
+</div>
+
+<div class="card">
+  <h3>作業動線の基本4原則（試験頻出）</h3>
+  <table>
+    <tr><th>原則</th><th>内容</th></tr>
+    <tr><td><strong>① 上から下へ</strong></td><td>天井や照明器具・棚など高所部分から作業を行い、壁面や窓周り・ドア・什器備品（家具調度品）などの立面面、最後に床面の作業を行う。ほこりやごみは上から下に落ちることを意識する。2階建てや3階建ての住居の場合は上層階から下層階に向かって作業する。壁面の拭き作業では洗剤等の液だれを防ぐために下から上に拭き上げる場合もある</td></tr>
+    <tr><td><strong>② 奥から手前へ（平面）</strong></td><td>一つの部屋を清掃する場合は、出入り口から最も離れた奥からはじめ、出入り口に向かって作業する。住居の場合は、玄関から最も離れた居間・キッチン・トイレなどから玄関に向かって作業を行う</td></tr>
+    <tr><td><strong>③ 狭い部分から広い場所へ（平面）</strong></td><td>テレビ・棚・タンスなど什器備品等で場所が塞がれている場合は、狭い部分から広い場所へ向かって作業を行う</td></tr>
+    <tr><td><strong>④ 水回り</strong></td><td>キッチン（台所）・浴室・トイレ・洗面所などの水回りは、洗剤のつけ置きなど作業前の準備に要する場合を考慮し、待機時間を他の作業に充てるなど動線を工夫することで、ムダを削減することができる</td></tr>
+  </table>
+  <div class="highlight" style="margin-top:10px">
+    <strong>基本動線の流れ：</strong>上層階→下層階 → 奥から出入り口へ → 屋内から屋外へ<br>
+    天井・照明器具 → 壁面・窓周り・ドア → 什器備品 → 床面<br>
+    キッチン・食卓 → 居間 → 和洋室 → 廊下・階段<br>
+    浴室・洗面所 → トイレ → 玄関
+  </div>
+</div>
+
+<div class="section-label">
+  <div class="num" style="background:var(--badge-3)">19</div>
+  <h2>第3節　場所別の基本作業</h2>
+</div>
+
+<div class="card">
+  <h3>場所別 作業手順と洗浄ポイント一覧</h3>
+  <table>
+    <tr><th>場所・部位</th><th>作業手順（フロー）</th><th>主なポイント・注意点</th></tr>
+    <tr><td><strong>① ガラス・窓枠</strong></td><td>点検→準備→除塵→洗浄→拭き取り→仕上げ→片付け・検査</td><td>スクイジー＋シャンパーを使用。シャンパーで洗剤液を塗布してからスクイジーで水切りする</td></tr>
+    <tr><td><strong>① 網戸</strong></td><td>点検→準備→除塵→洗浄→水拭き→仕上げ→片付け・検査</td><td>外して洗うとレールもよく洗える。奥行き1m以上のベランダがある場合はベランダで洗う場合もある。クロスで保護しながら作業（きず付けないように）</td></tr>
+    <tr><td><strong>② キッチン レンジフード（鋼板等）</strong></td><td>点検→準備→洗浄→拭き取り→仕上げ→片付け・検査</td><td>資機材：HC基本セット・専用洗剤・フラッシュタンク・キッチンペーパー等・踏み台または脚立・安全帽</td></tr>
+    <tr><td><strong>② キッチン ガスコンロ</strong></td><td>点検→準備→<strong>分解</strong>→洗浄→組み立て（仕上げ）→片付け・検査</td><td>資機材：HC基本セット・専用洗剤・フラッシュタンク・ガスブラシ・スチールウール・クリームクレンザー</td></tr>
+    <tr><td><strong>② キッチン システムキッチン（ステンレス）</strong></td><td>点検→準備→洗浄→拭き取り→仕上げ→片付け・検査</td><td>資機材：HC基本セット・専用洗剤・クリームクレンザー。ステンレスのアルカリ焼け（曇り）に注意。洗浄後は十分に水洗い</td></tr>
+    <tr><td><strong>② キッチン キャビネット</strong></td><td>点検→準備→除塵→洗浄→拭き取り→仕上げ→片付け・検査</td><td>家具用ワックス（艶出し）を使用</td></tr>
+    <tr><td><strong>③ 浴室（FRP等）浴槽</strong></td><td>点検→準備→洗浄→拭き取り→仕上げ→片付け・検査</td><td>カビ取り剤散布は<strong>下から上へ</strong>。30分ほど時間を置くと効果的。お湯は使用しない（臭いがすごい・残臭）。危険な臭い（普段のカビ取り剤の臭いと違う）に注意（目がしょぼしょぼするなど）。浴室内洗浄順序：①浴槽内→②洗い場・壁面・床面→③排水口→④全体を乾拭き→⑤換気扇を回し湿気除去で終了</td></tr>
+    <tr><td><strong>③ 浴室 壁面（陶磁器質系）</strong></td><td>点検→準備→除塵→洗浄→拭き取り→仕上げ→片付け・検査</td><td>資機材：クリームクレンザー・ステンレス保護剤・カビ取り剤など</td></tr>
+    <tr><td><strong>③ 浴室 排水トラップ</strong></td><td>点検→準備→洗浄→薬品洗い→片付け・検査</td><td>排水管洗浄剤・パイプ洗浄剤等を使用</td></tr>
+    <tr><td><strong>④ 洗面所 洗面台</strong></td><td>点検→準備→洗浄→拭き取り→仕上げ→片付け・検査</td><td>ステンレス回りは特に美しく仕上げる。蛇口・シャワーホース・シャワーヘッドのカルキ・石けんカス・皮脂汚れ取りは除去しにくい場合がある</td></tr>
+    <tr><td><strong>④ 洗面所 鏡</strong></td><td>点検→準備→除塵→洗浄→仕上げ→片付け・検査</td><td>ダイヤモンドパッド（ウロコ取りパッド）・ハンドポリッシャーを使用</td></tr>
+    <tr><td><strong>④ 洗面所 換気扇</strong></td><td>点検→準備→<strong>分解</strong>→洗浄→組み立て（仕上げ）→片付け・検査</td><td>交換用作動ひも・安全帽を使用</td></tr>
+    <tr><td><strong>⑤ トイレ 便器</strong></td><td>点検→準備→洗浄→拭き取り→仕上げ→片付け・検査</td><td>逆性石けんや除菌クリーナー（塩化ベンザルコニウム・ザルコニンなど）を使用。頑固なこびりつき汚れは水を抜いてトイレ用洗剤でつけ置き（1時間程度）。尿石除去剤は強酸のため取り扱いに十分注意。温水洗浄便座は便座と便座カバーを外して洗うと効果が高い。床面や壁面には飛散した尿汚れが多いため必ず拭き上げる</td></tr>
+    <tr><td><strong>⑥ 居間・リビングルーム 壁面（ビニルクロス）</strong></td><td>点検→準備→除塵→洗浄→拭き取り→仕上げ→片付け・検査</td><td>ほこりが多い場合はまず床の除塵作業（掃除機かけ）を行う。ドアを拭いてから壁に沿って右（または左）回りに壁面の除塵を行う</td></tr>
+    <tr><td><strong>⑥ 居間 カーペット（綿パッドクリーニング）</strong></td><td>点検→準備→除塵→洗浄→<strong>乾燥</strong>→仕上げ→片付け・検査</td><td>ポリッシャーセット・カーペット専用洗剤（発泡剤）・前処理剤・噴霧機・送風機・綿（ヤーン）パッドを使用</td></tr>
+    <tr><td><strong>⑥ 居間 床（フローリング）</strong></td><td>点検→準備→除塵→洗浄→拭き取り→仕上げ→片付け・検査</td><td>フローリング・クッションフロアの場合は洗剤拭き→水拭き→乾拭き。巾木の除塵（バキューム・クリックルワイパー（静電気ほこり取り））も行う</td></tr>
+    <tr><td><strong>⑦ エアコン</strong></td><td>点検→準備→除塵→洗浄→仕上げ→片付け・検査</td><td>内部洗浄・熱交換器（アルミフィン）のクリーニングにはハンドポリッシャー・艶出し剤・ホッパー型汚水受け・小型高圧洗浄機・ドレンホースクリーナー（またはサクションポンプ）を使用</td></tr>
+    <tr><td><strong>⑧ ソファー（繊維）</strong></td><td>点検→準備→除塵→洗浄→水拭き→仕上げ→<strong>乾燥</strong>→片付け・検査</td><td>整毛ブラシ・リンサー・ハンドポリッシャー・送風機・前処理剤・シミ取り剤を使用</td></tr>
+    <tr><td><strong>⑨ 玄関 床面（石質系・ビニル系）</strong></td><td>点検→準備→除塵→洗浄→汚水の回収→拭き取り→仕上げ→片付け・検査</td><td>ポリッシャーセット・フロアスクイジー・汚水取り器・送風機・ワックスを使用</td></tr>
+  </table>
+</div>
+
+<div class="section-label">
+  <div class="num" style="background:var(--badge-3)">20</div>
+  <h2>第4節　作業時の基本的な注意点</h2>
+</div>
+
+<div class="card">
+  <h3>作業時の4つの基本注意事項</h3>
+  <table>
+    <tr><th>項目</th><th>内容</th></tr>
+    <tr><td><strong>① 作業時の履き物</strong></td><td>スリッパやルームシューズ（上靴）を使用する。<strong>必ず自前で準備してお客様にお借りすることのないようにする</strong>。汚れのないきれいな履き物（または使い捨てタイプ）を使用し、使用前には靴裏を拭くなどして清浄であるように心がける。履き物の代わりに新品の靴下に履き替え作業を行う場合もある</td></tr>
+    <tr><td><strong>② 什器・備品の取り扱い</strong></td><td>移動できる什器・備品については作業エリア外に移動する。移動する際はきれいな手袋などを着用し汚さないように心がける。重量のあるものや大きなものは複数名で移動させる。<strong>調度品など高価なものはお客様に移動をお願いする</strong></td></tr>
+    <tr><td><strong>③ 養生シートの活用</strong></td><td>作業場所では養生シートを広げて、資機材を並べ、床を汚さないようにする。作業後には床面を拭く（養生シートの下に汚れが入り込んでいる場合がある）</td></tr>
+    <tr><td><strong>④ 作業中の破損</strong></td><td>什器・備品・壁紙等、明らかに古いものは、損耗の状態を確認し、<strong>顧客に事前に報告し、経年劣化による破損の可能性があることを指摘しておく</strong></td></tr>
+  </table>
+</div>
+
+<div class="section-label">
+  <div class="num" style="background:var(--badge-3)">21</div>
+  <h2>第5節　作業の目安時間</h2>
+</div>
+
+<div class="card">
+  <h3>1人あたりの目安時間（ワンルームマンション 約50〜70㎡）</h3>
+  <table>
+    <tr><th>場所</th><th>時間</th><th>備考</th></tr>
+    <tr><td>キッチン</td><td>3〜4時間</td><td>レンジフード（換気扇）のクリーニングを含む</td></tr>
+    <tr><td>浴室</td><td>1〜2時間</td><td>浴槽のエプロン外しを含む。※乾燥機の分解清掃の場合はプラス4時間</td></tr>
+    <tr><td>トイレ</td><td>1時間</td><td>ロータンク内は除く</td></tr>
+    <tr><td>洗面所</td><td>1時間</td><td></td></tr>
+    <tr><td>窓</td><td>1時間</td><td></td></tr>
+    <tr><td>リビング</td><td>1時間</td><td></td></tr>
+    <tr><td>玄関</td><td>0.5時間</td><td></td></tr>
+    <tr><td><strong>全体合計</strong></td><td><strong>6〜8時間</strong></td><td>2人作業の場合は3〜4時間</td></tr>
+  </table>
+  <div class="def-box" style="margin-top:10px">
+    <dt>2〜3人作業の場合の担当分け</dt>
+    <dd>水回り担当：キッチン（シンク・換気扇）</dd>
+    <dd>ガラス担当：ガラス・サッシ・シャッター・網戸・外構部</dd>
+    <dd>リビング担当：キッチン（シンク・換気扇）・リビング（スイッチ・ドア・照明カバー）・玄関</dd>
+  </div>
+</div>
+
+<div class="section-label">
+  <div class="num" style="background:var(--badge-3)">22</div>
+  <h2>第6節　部位別作業要領（別冊）の主な内容</h2>
+</div>
+
+<div class="card">
+  <h3>部位別作業要領 主な部位一覧（36種類）</h3>
+  <table>
+    <tr><th>No</th><th>部位</th><th>材質</th><th>場所</th></tr>
+    <tr><td>1〜3</td><td>カーペットクリーニング（ブラシ/綿パッド/スチーム）</td><td>カーペット（繊維）</td><td>居間・洋室・他</td></tr>
+    <tr><td>4</td><td>床面のクリーニング（ビニル系）</td><td>ビニル系タイル・ビニル床シート</td><td>居間・洋室・DK・他</td></tr>
+    <tr><td>5</td><td>床面のクリーニング（木質系）</td><td>木質（木床・フローリング）</td><td>居間・洋室・DK・他</td></tr>
+    <tr><td>6</td><td>床面のクリーニング（石質系）</td><td>陶磁器質系（セラミックタイル）・御影石・大理石・テラゾー</td><td>玄関・ロビー・他</td></tr>
+    <tr><td>7</td><td>壁面のクリーニング（ステンレス ヘアライン）</td><td>ステンレス（ヘアライン）</td><td>台所・他</td></tr>
+    <tr><td>8</td><td>壁面のクリーニング（陶磁器質系）</td><td>タイル・モザイクタイル</td><td>台所・他</td></tr>
+    <tr><td>9</td><td>壁面のクリーニング（ビニルクロス）</td><td>ビニルクロス</td><td>台所・他</td></tr>
+    <tr><td>10〜11</td><td>キッチンセットのクリーニング</td><td>ステンレス・キャビネット・化粧合板</td><td>台所</td></tr>
+    <tr><td>12〜14</td><td>ガスコンロ・IHコンロのクリーニング</td><td>焼付鋼板・ホーロー・クリアコート・ガラストップ・ステンレス</td><td>台所</td></tr>
+    <tr><td>15</td><td>換気扇のクリーニング</td><td>本体：焼付鋼板・オリフィス・羽根：合成樹脂</td><td>台所</td></tr>
+    <tr><td>16</td><td>レンジフードのクリーニング</td><td>本体：焼付鋼板・オリフィス・羽根：鋼板</td><td>台所</td></tr>
+    <tr><td>17</td><td>洗面化粧台のクリーニング</td><td>洗面器：陶磁器質・鋼板ホーロー。洗面化粧台：メラミン・ポリエステル・スチロール樹脂等の化粧合板</td><td>洗面所</td></tr>
+    <tr><td>18〜20</td><td>浴室のクリーニング（天井/在来工法/ユニットバス）</td><td>プラスチック系（平面）・タイル・ホーロー・FRP等</td><td>浴室</td></tr>
+    <tr><td>21</td><td>便器のクリーニング（ウォシュレット・他）</td><td>便器：陶器・樹脂製。便座：PP樹脂・ABS樹脂</td><td>トイレ</td></tr>
+    <tr><td>25〜27</td><td>エアコンのクリーニング（カバー・フィルター/内部洗浄・熱交換器/お掃除ロボット付き）</td><td>外装部・エアフィルター（合成樹脂）・熱交換器（アルミフィン）</td><td>居間・洋室・他</td></tr>
+    <tr><td>29</td><td>ガラス・窓枠のクリーニング</td><td>ガラス・アルミ・樹脂</td><td>家全般</td></tr>
+    <tr><td>30</td><td>ガラスのウロコ取り（ガラス・鏡）</td><td>ガラス・鏡</td><td>窓ガラス・浴室鏡等</td></tr>
+    <tr><td>34</td><td>白木のあく洗い（柱・天井）</td><td>白木</td><td>木造住宅の木部（室内・室外）</td></tr>
+    <tr><td>36</td><td>除菌清掃（主に立面）（手が触れる場所）</td><td>様々な材質（木・プラスチック・樹脂・ガラス・磁器・金属・他）</td><td>手の触れる場所（ドアノブ・他）</td></tr>
+  </table>
+</div>
+
+
+
+<div class="card">
+  <h3>作業手順書（作業マニュアル）</h3>
+  <div class="def-box">
+    <dt>作業手順とは</dt>
+    <dd>ハウスクリーニング従事者全員が、ムリ・ムダ・ムラなく安全かつ効率的に作業を行うことを目的に、作業の順番や方法を具体的に定めたもの</dd>
+    <dt>作業手順書とは</dt>
+    <dd>上記に個々のポイントや注意点なども加え、ハウスクリーニング従事者が作業内容を理解できるよう、わかりやすく文書化したもの（＝作業マニュアル）。作業を標準化することで、統一性や一貫性を持つ作業を行うことができ、作業結果（品質）を向上させることができる</dd>
+  </div>
+  <table style="margin-top:10px">
+    <tr><th>作業手順書作成の3視点</th><th>内容</th></tr>
+    <tr><td>正 否</td><td>その方法・手順で、作業が完成するか否か</td></tr>
+    <tr><td>安 全</td><td>その方法・手順で、危険性があるか、ないか</td></tr>
+    <tr><td>やりやすさ</td><td>その方法・手順で、作業がやりやすいか、能率があがるか</td></tr>
+  </table>
+  <div class="highlight" style="margin-top:10px">
+    （公社）全国ハウスクリーニング協会では「正否」「安全」「やりやすさ」の視点に立って作業手順書を作成することを推奨しており、ハウスクリーニングにおける標準作業手順をまとめたものを<strong>「部位別作業要領」</strong>として発行している
+  </div>
+</div>
+
+<div class="card">
+  <h3>基本的な作業工程（ワンルームマンション退去物件の例）</h3>
+  <table>
+    <tr><th>工程No.</th><th>作業内容</th></tr>
+    <tr><td>①</td><td>汚れの状態確認</td></tr>
+    <tr><td>②</td><td>準備作業</td></tr>
+    <tr><td>③</td><td>ガラス・サッシ・網戸の清掃</td></tr>
+    <tr><td>④</td><td>キッチンの清掃</td></tr>
+    <tr><td>⑤</td><td>浴室の清掃</td></tr>
+    <tr><td>⑥</td><td>洗面所の清掃</td></tr>
+    <tr><td>⑦</td><td>トイレの清掃</td></tr>
+    <tr><td>⑧</td><td>居間・部屋の清掃</td></tr>
+    <tr><td>⑨</td><td>玄関の清掃</td></tr>
+  </table>
+  <div class="warn" style="margin-top:8px">清掃作業を行う前に、全体的に部屋や汚れの状況を確認し、落ちにくい汚れがある場合は洗剤のつけ置き等の時間も考えながら、作業工程を臨機応変に組み立てる</div>
+</div>
+
+<!-- ===== 第9章 安全な作業を行うために ===== -->
+<div class="chapter-divider">
+  <div class="eyebrow">CHAPTER 9</div>
+  <h2>安全な作業を行うために</h2>
+</div>
+
+<div class="card">
+  <div class="highlight">
+    <strong>第9章の全体像（全8節）：</strong>第1節 安全衛生管理／第2節 災害発生時の対応／第3節 サービス業の労働災害／第4節 洗剤取り扱い上のリスクアセスメント／第5節 洗剤使用における関連法令／第6節 高所作業／第7節 感染防止対策／第8節 電気
+  </div>
+</div>
+
+<!-- 第1節 -->
+<div class="section-label">
+  <div class="num" style="background:var(--badge-4)">23</div>
+  <h2>第1節　安全衛生管理</h2>
+</div>
+
+<div class="card">
+  <h3>事故の間接原因・直接原因</h3>
+  <div class="def-box">
+    <dt>間接原因</dt>
+    <dd>事故につながる遠い原因。適切な再発防止活動により未然に防ぐ（＝未然防止策）</dd>
+    <dt>直接原因</dt>
+    <dd>事故に直結する原因。事故から災害へと連鎖する。多くは <strong>不安全な状態（物的原因）</strong> と <strong>不安全な行動（人的原因）</strong> が複合して起こる</dd>
+  </div>
+  <div class="compare" style="margin-top:10px">
+    <div class="compare-box left">
+      <h4 class="left">不安全な状態（物的原因）</h4>
+      <p>照明器具の不良、床の劣化・破損、機械・器具の欠陥、保護具の不着用、知識不足 など</p>
+    </div>
+    <div class="compare-box right">
+      <h4 class="right">不安全な行動（人的原因）</h4>
+      <p>危険予知の不足、慌てた作業、無理な姿勢、手順を守らない など</p>
+    </div>
+  </div>
+  <table style="margin-top:10px">
+    <tr><th>室内作業で多い事故の内容</th></tr>
+    <tr><td>① 転倒・転落等（階段や脚立から落ちる）</td></tr>
+    <tr><td>② はさまれ・巻き込まれ（ドア・機械等）</td></tr>
+    <tr><td>③ 落下物によるもの（照明器具・棚の上等）</td></tr>
+    <tr><td>④ 溶剤・洗剤・薬剤等（保護具の不着用等）</td></tr>
+    <tr><td>⑤ 電気によるもの（感電・漏電事故等）</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>作業の安全対策（要点）</h3>
+  <table>
+    <tr><th>対象</th><th>安全対策のポイント</th></tr>
+    <tr><td><strong>作業の安全確保と整理整頓</strong></td><td>転倒・転落防止のため脚立・脚部の足もとに注意。浴室等すべりやすい場所では足もと・上履き等に留意。整理整頓は転倒・破損事故の防止に有効</td></tr>
+    <tr><td><strong>清掃用機器</strong></td><td>顧客の電気容量を確認し、漏電の有無を確認。交流電流を使用しない機器（バッテリー式）や補修用機器の準備も有効。高圧洗浄機等使用時は養生に特に注意</td></tr>
+    <tr><td><strong>什器備品等の運搬</strong></td><td>運搬時は本体を破損させない。壁・柱等に接触させない。落下・転倒に注意し、机上に物を載せたままの移動は避ける</td></tr>
+    <tr><td><strong>洗剤・溶剤・薬品等</strong></td><td>皮膚・眼への影響に注意。<strong>アルカリ性洗剤＋酸性洗剤、塩素系＋酸性は混合すると有毒ガス・危険</strong>。油汚れ用洗剤は十分な予備知識と訓練が必要。保管を徹底</td></tr>
+    <tr><td><strong>作業手順の作成</strong></td><td>正しい作業手順を定め守ることで、目的達成・能率・安全性が向上する</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>作業手順の作成方法（3つの視点／試験頻出）</h3>
+  <div class="highlight">対象作業を細かく分解し、単位作業→主なステップ→急所（ポイント）に分けて考える。作成は手順どおりに作業が完成するかを確認する。</div>
+  <table style="margin-top:10px">
+    <tr><th>視点</th><th>チェック内容</th></tr>
+    <tr><td><strong>① 成否</strong></td><td>その手順で作業が完成するか（作業手順に当たらない動作・姿勢は書かない）</td></tr>
+    <tr><td><strong>② 安全</strong></td><td>その手順に危険がないか（危険がある場合は絶対に作成しない）</td></tr>
+    <tr><td><strong>③ やりやすさ</strong></td><td>誰が作業に当たっても、作業がやりやすく能率が上がる手順か</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>労働安全衛生マネジメントシステムの導入</h3>
+  <div class="def-box">
+    <dt>根拠</dt>
+    <dd>厚生労働省（旧・労働省）のガイドライン。労働安全衛生法に基づき、平成11年に指針公表、平成17年・令和元年に改正</dd>
+    <dt>特徴</dt>
+    <dd><strong>PDCAサイクル</strong>により一連の自主的活動を継続して実施し、事業場の安全衛生水準をスパイラル状に向上させていく</dd>
+  </div>
+  <div class="warn" style="margin-top:10px">中核となるのが <strong>リスクアセスメント</strong>（リスクの事前調査）。危険源を意識し、労働災害の防止から始める</div>
+  <table style="margin-top:10px">
+    <tr><th colspan="2">リスクアセスメントの実施手順（図表9-1）</th></tr>
+    <tr><td><strong>手順1</strong></td><td>労働者の就業に係る危険性または有害性の特定</td></tr>
+    <tr><td><strong>手順2</strong></td><td>特定された危険性・有害性ごとのリスクの見積り</td></tr>
+    <tr><td><strong>手順3</strong></td><td>見積りに基づくリスク低減のための優先度の設定・リスク低減措置の内容検討</td></tr>
+    <tr><td><strong>手順4</strong></td><td>優先度に対応したリスク低減措置の実施</td></tr>
+  </table>
+</div>
+
+<!-- 第2節 -->
+<div class="section-label">
+  <div class="num" style="background:var(--badge-4)">24</div>
+  <h2>第2節　災害発生時の対応</h2>
+</div>
+
+<div class="card">
+  <h3>整理整頓の目的・災害発生時の処理</h3>
+  <p style="font-size:13px;margin-bottom:10px">安全確保はまず作業環境からスタート。必要な資機材が誰でもわかるように収納し、不安定な積み方をしない（荷崩れ防止）。<strong>4S</strong> に <strong>躾（マナー）</strong> を加えた <strong>5S</strong> を目標とする。</p>
+  <table>
+    <tr><th>順</th><th>災害発生時の処理</th></tr>
+    <tr><td>①</td><td>感電事故等防止のため、電気機器の使用を中止する</td></tr>
+    <tr><td>②</td><td>被害者がいるときは救出し、応急手当をする</td></tr>
+    <tr><td>③</td><td>緊急を要するときは救急車の手配を要請する</td></tr>
+    <tr><td>④</td><td>重大事故の際は現場を保存し、原因調査に備える</td></tr>
+    <tr><td>⑤</td><td>関係先に連絡し、指示を仰ぐ</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>労働災害の過程とハインリッヒの法則（図表9-2／試験頻出）</h3>
+  <div class="highlight"><strong>労働災害発生の過程：</strong>原因 → 事故 → 労働災害（人身の障害を伴う／伴わないに分けられる）</div>
+  <div class="def-box" style="margin-top:10px">
+    <dt>廃疾（はいしつ）</dt>
+    <dd>身体障害を伴う回復不能の病</dd>
+    <dt>不休災害</dt>
+    <dd>医療機関で医師の手当を受け、障害を伴わない災害（休業1日未満のもの）</dd>
+  </div>
+  <table style="margin-top:10px">
+    <tr><th>ハインリッヒの法則（1：29：300）</th><th>内容</th></tr>
+    <tr><td><strong>1</strong></td><td>重大な事故・災害</td></tr>
+    <tr><td><strong>29</strong></td><td>軽微な事故・災害</td></tr>
+    <tr><td><strong>300</strong></td><td>ヒヤリ・ハット（傷害のない事故）</td></tr>
+  </table>
+  <div class="warn" style="margin-top:8px">⚠ 1件の重大災害の背後には29件の軽微な災害と300件のヒヤリ・ハットがある。重大災害を事前に防止することが大切。</div>
+</div>
+
+<!-- 第3節 -->
+<div class="section-label">
+  <div class="num" style="background:var(--badge-4)">25</div>
+  <h2>第3節　サービス業の労働災害</h2>
+</div>
+
+<div class="card">
+  <h3>第三次産業における労働災害の特徴</h3>
+  <ul class="list">
+    <li>近年、第三次産業の労働災害は<strong>増加傾向</strong>（サービス業に従事する労働者数の増加が背景）</li>
+    <li>2023年、全産業の死傷災害の約<strong>50.4%</strong>を第三次産業が占める</li>
+    <li>災害発生件数（休業4日以上）のうち、2015年→2023年で第三次産業の割合は増加傾向</li>
+  </ul>
+  <table style="margin-top:10px">
+    <tr><th>事故の型別（第三次産業／図表9-5）</th><th>割合</th></tr>
+    <tr><td><strong>① 転倒</strong></td><td>約 <strong>32%</strong>（最多）</td></tr>
+    <tr><td>② 動作の反動・無理な動作（腰痛等）</td><td>約 19.5%</td></tr>
+    <tr><td>③ 墜落・転落</td><td>約 11.3%</td></tr>
+    <tr><td>④ 交通事故（道路）</td><td>約 6.5%</td></tr>
+    <tr><td>⑤ はさまれ・巻き込まれ</td><td>—</td></tr>
+    <tr><td>⑥ 切れ・こすれ</td><td>—</td></tr>
+  </table>
+  <div class="highlight" style="margin-top:8px">「転倒」＋「動作の反動・無理な動作」＋「墜落・転落」の上位3型で全体の約 <strong>6割強</strong> を占める</div>
+</div>
+
+<div class="card">
+  <h3>ビルメンテナンス業・警備業の型別内訳</h3>
+  <div class="compare">
+    <div class="compare-box left">
+      <h4 class="left">ビルメンテナンス業</h4>
+      <ul class="list">
+        <li>① 転倒 49.0%</li>
+        <li>② 墜落・転落 18.0%</li>
+        <li>③ 動作の反動・無理な動作 12.7%</li>
+        <li>④ 激突 6.3%</li>
+        <li>⑤ はさまれ・巻き込まれ 3.7%</li>
+      </ul>
+    </div>
+    <div class="compare-box right">
+      <h4 class="right">警備業</h4>
+      <ul class="list">
+        <li>① 転倒 42.8%</li>
+        <li>② 交通事故（道路）12.5%</li>
+        <li>③ 動作の反動・無理な動作 11.5%</li>
+        <li>④ 墜落・転落 9.9%</li>
+        <li>⑤ はさまれ・巻き込まれ 4.2%</li>
+        <li>⑥ 激突 3.8%</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>第三次産業の労働災害防止対策</h3>
+  <table>
+    <tr><th>安全管理体制</th><th>内容</th></tr>
+    <tr><td><strong>事業場規模 50人以上</strong></td><td>安全管理者・衛生管理者を選任し、安全委員会を設置</td></tr>
+    <tr><td><strong>規模 10人以上50人未満</strong></td><td>安全衛生推進者を選任</td></tr>
+  </table>
+  <table style="margin-top:12px">
+    <tr><th>活動</th><th>内容</th></tr>
+    <tr><td><strong>4S活動</strong></td><td>災害の原因を取り除く。<strong>整理・整頓・清掃・清潔</strong> の4つを日常的に行う。作業効率化も期待できる</td></tr>
+    <tr><td><strong>KY活動（危険予知）</strong></td><td>業務開始前に「これは危ないね」と話し合い、一人ひとりが「指差し」で行動確認。潜んでいる危険を見つけて除く</td></tr>
+    <tr><td><strong>危険の見える化</strong></td><td>職場の危険を可視化。ステッカー等で危険ポイントに注意喚起（例：頭上注意・つまずき注意・滑り注意・危険手を触れるな）</td></tr>
+    <tr><td><strong>リスクアセスメント</strong></td><td>作業における危険性・有害性を特定し、リスク低減対策を検討</td></tr>
+    <tr><td><strong>安全教育・研修</strong></td><td>正しい使い方・作業方法を学ぶ。2024年4月1日改正の労働安全衛生法第59条により、雇入れ時・作業内容変更時の安全教育が全業種で義務化</td></tr>
+    <tr><td><strong>安全意識の啓発＝全員参加</strong></td><td>経営者・管理者だけでなく、正社員・パート・アルバイト・派遣など雇用形態を問わず全員参加が重要</td></tr>
+  </table>
+</div>
+
+<!-- 第4節 -->
+<div class="section-label">
+  <div class="num" style="background:var(--badge-4)">26</div>
+  <h2>第4節　洗剤取り扱い上のリスクアセスメント</h2>
+</div>
+
+<div class="card">
+  <h3>洗剤使用による事故事例</h3>
+  <ul class="list">
+    <li>レンジフード洗浄中、アルカリ性洗浄剤が皮膚に付着 → 皮膚移植が必要な化学やけど</li>
+    <li>浴室で塩素系洗剤を長時間使用中、換気せずマスクなしで作業 → 嘔吐・喉の痛み・胸痛</li>
+    <li>アルカリ性洗剤のスプレー容器使用中、ミストを吸引 → 喉の痛みの症状</li>
+    <li>床のアルカリ性洗浄剤が付いたまま作業を続けた → 充血の症状</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>リスクアセスメントとは</h3>
+  <div class="def-box">
+    <dt>リスクアセスメント</dt>
+    <dd>作業における危険性や有害性を特定し、それによる労働災害・健康障害を生じるおそれの程度（リスク）を見積り、リスクの低減対策を検討すること</dd>
+  </div>
+  <div class="compare" style="margin-top:10px">
+    <div class="compare-box left">
+      <h4 class="left">危険源（例：ライオン）</h4>
+      <p>労働災害が発生する危険源そのもの。人がライオンに襲われる危険な状態＝リスク大</p>
+    </div>
+    <div class="compare-box right">
+      <h4 class="right">リスクの低減</h4>
+      <p>ライオンを檻に入れれば、人が襲われる危険が低くなる。これがリスクアセスメントの手法</p>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>リスクアセスメントの実施手順</h3>
+  <table>
+    <tr><th>手順</th><th>内容</th></tr>
+    <tr><td>①</td><td>化学物質等による危険性や有害性の特定</td></tr>
+    <tr><td>②</td><td>特定された危険性や有害性によるリスクの見積り</td></tr>
+    <tr><td>③</td><td>リスクの見積りに基づく、リスク低減措置の内容検討</td></tr>
+    <tr><td>④</td><td>リスク低減措置の実施</td></tr>
+    <tr><td>⑤</td><td>リスクアセスメント結果の労働者への周知</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>製品ラベル・SDS・GHS（試験頻出）</h3>
+  <div class="def-box">
+    <dt>製品ラベル（図表9-7）</dt>
+    <dd>製品の名称・絵表示（GHSマーク）・注意喚起語（「危険」「警告」）・危険有害性情報・注意書き・供給者の特定 などを記載</dd>
+    <dt>SDS（Safety Data Sheet／安全データシート）</dt>
+    <dd>事業者が製品を他の事業者に出荷する際に、その相手方に対して危険有害性や取り扱い・安全対策などの情報を提供するためのシート。<strong>16項目</strong>を記載（図表9-8）</dd>
+    <dt>GHS（The Globally Harmonized System）</dt>
+    <dd>化学品の分類・表示に関する世界調和システム。危険有害性を国際的に統一した分類・絵表示で伝える仕組み（図表9-9）</dd>
+  </div>
+  <table style="margin-top:10px">
+    <tr><th>SDSの記載16項目</th></tr>
+    <tr><td>①製品名及び会社情報 ②危険有害性の要約 ③組成・成分情報 ④応急措置 ⑤火災時の措置 ⑥漏出時の措置 ⑦取扱い及び保管上の注意 ⑧暴露防止及び保護措置 ⑨物理的及び化学的性質 ⑩安定性及び反応性 ⑪有害性情報 ⑫環境影響情報 ⑬廃棄上の注意 ⑭輸送上の注意 ⑮適用法令 ⑯その他の情報</td></tr>
+  </table>
+  <table style="margin-top:10px">
+    <tr><th>GHS絵文字</th><th>示す危険・有害性</th><th>該当する主な洗剤</th></tr>
+    <tr><td><strong>炎マーク</strong></td><td>引火性の高い液体</td><td>エアゾール製品など</td></tr>
+    <tr><td><strong>腐食性マーク</strong></td><td>皮膚腐食性・眼の損傷</td><td>アルカリ性の洗剤・ハクリ剤、酸性洗剤など</td></tr>
+    <tr><td><strong>感嘆符マーク</strong></td><td>危険・有害性は低いがリスクがある場合に表示</td><td>アルカリ性・酸性・溶剤タイプの洗剤など</td></tr>
+    <tr><td><strong>環境マーク</strong></td><td>水生生物に対する危険・有害性</td><td>酸性トイレクリーナー・油性シミ取り・シールはがしなど</td></tr>
+    <tr><td><strong>人体マーク</strong></td><td>健康有害性（生殖有害・特定臓器の障害等）</td><td>エタノール・アミノエタノールを含有する洗剤、酸性トイレクリーナーなど</td></tr>
+    <tr><td><strong>どくろマーク</strong></td><td>急性毒性（飲み込む・皮膚接触の毒性）</td><td>一部の特殊製品のみ該当</td></tr>
+  </table>
+</div>
+
+<!-- 第5節 -->
+<div class="section-label">
+  <div class="num" style="background:var(--badge-4)">27</div>
+  <h2>第5節　洗剤使用における関連法令</h2>
+</div>
+
+<div class="card">
+  <h3>洗剤に関わる主な関連法令</h3>
+  <table>
+    <tr><th>法令</th><th>要点</th></tr>
+    <tr><td><strong>労働安全衛生法</strong></td><td>労働者の安全と健康を確保し、快適な作業環境の形成を促進する法律。平成28年6月1日施行。<strong>令和4年5月改正で、リスクアセスメント対象の化学物質（ハウスクリーニング業も洗剤などが対象）に対する保護具の着用が義務化</strong></td></tr>
+    <tr><td><strong>毒物及び劇物取締法</strong></td><td>日常流通する有用な化学物質のうち、急性毒性から毒物・劇物を指定し規制。製造・輸入・販売業者に譲渡手続・容器包装表示・貯蔵の措置義務など。清掃業（ハウスクリーニング業）は業務上取扱者に該当（図表9-10）</td></tr>
+    <tr><td><strong>有機溶剤中毒予防規則</strong></td><td>有機溶剤の安全基準を定め、蒸気の吸入による中毒を予防。ハウスクリーニングで一般に使用する洗剤は有機溶剤をほとんど含まないが、含む場合はこの規則に従い対策を行う</td></tr>
+    <tr><td><strong>消防法</strong></td><td>発火性・引火性の物質を「危険物」と定義。貯蔵・取り扱い量により届出・許可申請が必要な場合がある（清掃業では通常、届出が必要になることはない）</td></tr>
+    <tr><td><strong>下水道法・水質汚濁防止法</strong></td><td>洗浄汚水（排水）の排出を規制。下水道法は下水道への排出、水質汚濁防止法は河川など公共用水域への排出を規制（図表9-11）</td></tr>
+  </table>
+  <table style="margin-top:12px">
+    <tr><th>図表9-10 劇物該当の化学物質（清掃業使用時）</th><th>規制対象含有量</th><th>主な用途</th></tr>
+    <tr><td>2-アミノエタノール</td><td>20%超</td><td>アルカリ性洗剤・ワックス剥離剤</td></tr>
+    <tr><td>水酸化ナトリウム</td><td>5%超</td><td>油脂汚れ用洗剤・パイプ洗浄剤</td></tr>
+    <tr><td>水酸化カリウム</td><td>5%超</td><td>油脂汚れ用洗剤</td></tr>
+    <tr><td>シュウ酸</td><td>10%超</td><td>サビ除去剤</td></tr>
+    <tr><td>塩酸</td><td>10%超</td><td>トイレ洗剤・尿石除去剤</td></tr>
+    <tr><td>フッ化水素アンモニウム</td><td>4%超</td><td>石材用洗浄剤</td></tr>
+    <tr><td>過酸化水素</td><td>6%超</td><td>石材用洗浄剤・白木のシミ抜き</td></tr>
+  </table>
+  <div class="warn" style="margin-top:8px">⚠ 下水道は汚水用と雨水用に分かれており、<strong>雨水用は公共用水域に直接排出される</strong>ため、汚水を雨水用に流してはならない。</div>
+</div>
+
+<!-- 第6節 -->
+<div class="section-label">
+  <div class="num" style="background:var(--badge-4)">28</div>
+  <h2>第6節　高所作業</h2>
+</div>
+
+<div class="card">
+  <h3>高所作業の基本（労働安全衛生法令）</h3>
+  <div class="highlight"><strong>高所作業＝2m以上の高さで行う作業。</strong>2m以上の高さからの転落は重大な災害につながりやすい。</div>
+  <table style="margin-top:10px">
+    <tr><th>条文</th><th>内容</th></tr>
+    <tr><td><strong>安衛則 第518・519条</strong></td><td>2m以上の箇所で作業を行う場合は、足場を組み立てる等の方法で作業床を設ける。作業床の端・開口部には囲い・手すり・覆い等を設けて墜落を防止する。設けることが困難なときは、<strong>墜落制止用器具（安全帯）</strong>を使用させる等の措置</td></tr>
+    <tr><td><strong>安衛則 第527条（移動はしご）</strong></td><td>① 丈夫な構造 ② 材料は著しい損傷・腐食等がない ③ 幅は30cm以上 ④ すべり止め装置等（転位防止装置）を設ける</td></tr>
+    <tr><td><strong>安衛則 第528条（脚立）</strong></td><td>① 丈夫な構造 ② 材料は著しい損傷・腐食等がない ③ 脚と水平面の角度を75度以下とし、折りたたみ式は角度を保つ金具を備える ④ 踏み面は作業を安全に行える必要な面積を有する</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>はしごを使う場合の注意点（8項目）</h3>
+  <ul class="list">
+    <li>① 上部・下部の固定状況を確認する</li>
+    <li>② ボルト・ネジの緩みや腐食を確認する</li>
+    <li>③ 上端から <strong>60cm以上</strong> 上に突出させる</li>
+    <li>④ 立てかけ角度は <strong>75度</strong> 程度とする</li>
+    <li>⑤ 踏さんに明らかな傷みがない</li>
+    <li>⑥ 足元にすべり止めがある</li>
+    <li>⑦ 靴は脱げにくく、すべりにくいものを</li>
+    <li>⑧ 保護具（ヘルメット）を着用し、あごひもを締める</li>
+  </ul>
+  <div class="warn" style="margin-top:8px">⚠ <strong>はしごは自立できないため、1人で使用することは厳禁。必ず支える補助者が必要。</strong></div>
+</div>
+
+<div class="card">
+  <h3>脚立を使う場合の注意点（10項目）</h3>
+  <ul class="list">
+    <li>① 安定した場所に設置している</li>
+    <li>② 開き止めを確実にロックをかけた</li>
+    <li>③ ネジ・ピンの緩み、脱落、踏さんに明らかな傷みはない</li>
+    <li>④ 靴は脱げにくく、すべりにくい</li>
+    <li>⑤ 保護具（ヘルメット）を着用し、あごひもを締めている</li>
+    <li>⑥ 身体を天板や踏さんに当て、身体を安定させている</li>
+    <li>⑦ 天板上や天板をまたいで作業していない</li>
+    <li>⑧ 作業は2段目以下の踏さんで行っている</li>
+    <li>⑨ 作業の頭の真上でしない</li>
+    <li>⑩ 荷物を持って昇降しない</li>
+  </ul>
+  <div class="highlight" style="margin-top:8px"><strong>2m以上の作業時：</strong>ヘルメットだけでなく安全帯も着用。浴室で使用の場合はすべり止めの下にクロスを敷く。</div>
+</div>
+
+<div class="card">
+  <h3>はしご等の災害データ（続計資料）</h3>
+  <div class="warn">墜落・転落災害の原因で最も多いのが「はしご等」からのもので、<strong>約23%（4,535人／2011〜2015年の5年平均）</strong>を占める。</div>
+</div>
+
+<!-- 第7節 -->
+<div class="section-label">
+  <div class="num" style="background:var(--badge-4)">29</div>
+  <h2>第7節　感染防止対策</h2>
+</div>
+
+<div class="card">
+  <h3>感染と感染症・感染の成立</h3>
+  <div class="def-box">
+    <dt>感染</dt>
+    <dd>病原体が何らかの手段でヒトの体内に侵入し、増殖すること</dd>
+    <dt>感染症</dt>
+    <dd>感染により、身体に何らかの症状が現れること。病原体が身体に侵入しても必ず感染症になるわけではない（免疫の強さのバランスで決まる）</dd>
+  </div>
+  <table style="margin-top:10px">
+    <tr><th>感染成立の3要因（図表9-15）</th><th>内容</th></tr>
+    <tr><td><strong>① 感染源</strong></td><td>病原体の存在</td></tr>
+    <tr><td><strong>② 感染経路</strong></td><td>感染経路の存在</td></tr>
+    <tr><td><strong>③ 感受性宿主</strong></td><td>感受性のある宿主の存在。抵抗力の弱い人（高齢者・乳幼児・基礎疾患を持つ人）はかかりやすい</td></tr>
+  </table>
+  <div class="warn" style="margin-top:8px">⚠ この3要因が揃うことで、はじめて感染が成立する。1つでも断てば感染は防げる。</div>
+</div>
+
+<div class="card">
+  <h3>病原体の種類と大きさ（図表9-16／試験頻出）</h3>
+  <table>
+    <tr><th>病原体</th><th>代表例・特徴</th></tr>
+    <tr><td><strong>細菌</strong></td><td>大腸菌・結核菌・肺炎球菌・レジオネラ菌・サルモネラ菌。大きさ概ね1μm前後。単独で生存・増殖できる（単細胞生物）。抗菌薬（抗生剤）が有効</td></tr>
+    <tr><td><strong>ウイルス</strong></td><td>インフルエンザ・コロナ・ノロ など。<strong>細菌よりずっと小さい（10〜100nm程度）</strong>。単独では生存できず細胞に入り込んで増殖。原因の8〜9割はウイルス。<strong>抗菌薬（抗生剤）は無効</strong></td></tr>
+    <tr><td><strong>真菌（カビ）</strong></td><td>白癬菌・カンジダ・アスペルギルス</td></tr>
+    <tr><td><strong>原虫</strong></td><td>マラリア原虫</td></tr>
+    <tr><td><strong>リケッチア</strong></td><td>オリエンティア・ツツガムシ</td></tr>
+  </table>
+  <div class="highlight" style="margin-top:8px">大きさの目安：ウイルス（10〜100nm）＜ 細菌（約1μm）＜ 真菌 ＜ ヒト細胞（約10μm）。※nm＝1mの10億分の1／μm＝1mの100万分の1</div>
+</div>
+
+<div class="card">
+  <h3>感染経路（4種類）</h3>
+  <table>
+    <tr><th>経路</th><th>内容・代表例</th></tr>
+    <tr><td><strong>① 空気感染</strong></td><td>細菌やウイルスが空気中に飛び出して感染（麻しん、水痘、結核 等）</td></tr>
+    <tr><td><strong>② 飛沫感染</strong></td><td>せき・くしゃみなど細かい唾液等により空気中に飛び出し感染（インフルエンザ、おたふくかぜ、風しん 等）</td></tr>
+    <tr><td><strong>③ 接触感染</strong></td><td>皮膚や粘膜の直接的な接触、またはドアノブ・タオルなど物体を介して病原体が付着（インフルエンザ 等）</td></tr>
+    <tr><td><strong>④ 経口感染（糞口感染）</strong></td><td>汚染された食べ物や、感染した人の手指等を介して感染（ロタウイルス、ノロウイルス 等の感染性胃腸炎）</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>感染防止対策（5つの柱）</h3>
+  <table>
+    <tr><th>対策</th><th>内容</th></tr>
+    <tr><td><strong>① 感染源の除去</strong></td><td>病原体を除去するため、環境を衛生的に保つ。消毒・清掃</td></tr>
+    <tr><td><strong>② 感染経路の遮断</strong></td><td>空気・飛沫・接触・経口の4つの経路を遮断する。医療従事者が用いる「標準予防策」が感染防止の基本</td></tr>
+    <tr><td><strong>③ 手指衛生</strong></td><td>手洗いが最も手軽にできる感染予防。ポイントは洗い残しがないよう丁寧に洗うこと。水道が使えない場合はアルコール系消毒剤を活用</td></tr>
+    <tr><td><strong>④ 個人防護具（PPE）</strong></td><td>エプロン・マスク・ゴーグル・手袋等。着用も正しく、脱ぐときも表面に触れず「規則正しく」脱衣後は必ず手指衛生を行う</td></tr>
+    <tr><td><strong>⑤ 宿主の感受性を低下させない</strong></td><td>抵抗力を高めるよう、① 食事 ② 睡眠 ③ 運動 に気を付ける</td></tr>
+  </table>
+</div>
+
+<!-- 第8節 -->
+<div class="section-label">
+  <div class="num" style="background:var(--badge-4)">30</div>
+  <h2>第8節　電気</h2>
+</div>
+
+<div class="card">
+  <h3>電気の基本知識</h3>
+  <div class="highlight">電気に関して最も重要なこと：<strong>① 感電しないこと ② 電気を落とさないこと（ブレーカーを落とさない）</strong>。この2つを守るために基本を理解する。</div>
+  <table style="margin-top:10px">
+    <tr><th>基本単位</th><th>意味（水にたとえると）</th></tr>
+    <tr><td><strong>電流 I（アンペア A）</strong></td><td>電気が流れる大きさ ＝ 水の流れ（水量）</td></tr>
+    <tr><td><strong>電圧 E（ボルト V）</strong></td><td>電流を流す力の大きさ ＝ 水を流そうとする力（水圧）</td></tr>
+    <tr><td><strong>抵抗 R（オーム Ω）</strong></td><td>電流の流れを妨げる力の大きさ ＝ 水車・石ころ</td></tr>
+    <tr><td><strong>電力 P（ワット W）</strong></td><td>電気が行う仕事の大きさ ＝ 水車のする仕事</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>直流と交流・コンセント（試験頻出）</h3>
+  <div class="compare">
+    <div class="compare-box left">
+      <h4 class="left">直流（DC）</h4>
+      <p>電気の流れる大きさ・向きが一定。乾電池・懐中電灯など。乾電池の＋−のように向きが定まっている</p>
+    </div>
+    <div class="compare-box right">
+      <h4 class="right">交流（AC）</h4>
+      <p>電圧が周期的に変化し、電流の向きが変わる。一般家庭で広く使われる。家電製品は比較的小さな電気を使う場合に対応</p>
+    </div>
+  </div>
+  <table style="margin-top:10px">
+    <tr><th>コンセントの種類</th><th>用途</th></tr>
+    <tr><td><strong>単相100V</strong>（標準）</td><td>一般家電。日本のコンセントの標準</td></tr>
+    <tr><td><strong>単相200V</strong></td><td>エアコン・電子レンジなど消費電力の高い家電</td></tr>
+    <tr><td><strong>三相200V</strong></td><td>工場の設備機器など大きな電気を使う機器</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>電流・電圧・電力の関係（最重要）</h3>
+  <div class="highlight" style="text-align:center;font-size:15px">
+    <strong>電流（A）× 電圧（V）＝ 電力（W）</strong>
+  </div>
+  <table style="margin-top:10px">
+    <tr><th>電気容量の基準</th><th>計算</th></tr>
+    <tr><td>1つのコンセント（15A・100V）</td><td>15A × 100V ＝ <strong>1500W まで</strong></td></tr>
+    <tr><td>一般家庭の契約 30A</td><td>30A × 100V ＝ 3000W</td></tr>
+    <tr><td>契約 60A</td><td>60A × 100V ＝ 6000W</td></tr>
+  </table>
+  <div class="warn" style="margin-top:8px">⚠ <strong>1つのコンセントに15A（1500W）以上、または契約電流以上の電気が一度に流れるとブレーカーが「落ちる」。</strong>掃除機（1000W）＋電子レンジ（1300W）＝2300W を同じ回路で使うと15A（1500W）を超えて遮断される。</div>
+</div>
+
+<div class="card">
+  <h3>主な家電製品のおおよその消費電力・電流（図表9-19）</h3>
+  <table>
+    <tr><th>家電製品</th><th>消費電力</th><th>電流</th></tr>
+    <tr><td>照明器具（LED1基）</td><td>10W</td><td>0.1A</td></tr>
+    <tr><td>液晶テレビ（42型）</td><td>200W</td><td>2A</td></tr>
+    <tr><td>冷蔵庫（450L）</td><td>250W</td><td>2.5A</td></tr>
+    <tr><td>洗濯機（縦型）</td><td>400〜500W</td><td>4〜5A</td></tr>
+    <tr><td>電子レンジ</td><td>500〜1500W</td><td>5〜15A</td></tr>
+    <tr><td>ドライヤー</td><td>1000〜1500W</td><td>10〜15A</td></tr>
+    <tr><td>IHジャー炊飯器（5合）</td><td>1300W</td><td>13A</td></tr>
+    <tr><td>エアコン（10畳用）</td><td>冷房580W／暖房660W（起動時1400〜2000W）</td><td>8〜10A</td></tr>
+    <tr><td>掃除機（紙パック式）</td><td>1000〜1200W</td><td>10〜12A</td></tr>
+    <tr><td>ポリッシャー</td><td>1200〜1300W</td><td>12〜13A</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>屋内配線とブレーカー（分電盤）</h3>
+  <p style="font-size:13px;margin-bottom:10px">電気は発電所・変電所から送電線を通じて各家庭に届き、<strong>分電盤</strong>を通って各部屋へ振り分けられる。分電盤にはブレーカー等が設置され、電気の流れを遮断して家庭を守る。</p>
+  <table>
+    <tr><th>ブレーカーの種類</th><th>役割</th></tr>
+    <tr><td><strong>① アンペアブレーカー</strong></td><td>家屋内に流れる電気の総量を管理。電力会社との契約アンペア数（30A・60A等）を超えて一度に流れると落ちる</td></tr>
+    <tr><td><strong>② 漏電ブレーカー</strong></td><td>家屋内で電気回路に漏電を感知すると電気の流れを遮断。使用した電気機器やコンセント自体に漏電があると落ちる</td></tr>
+    <tr><td><strong>③ 回路用ブレーカー（安全ブレーカー）</strong></td><td>分電盤で回路ごとに配置。その回路に規定以上の電流が流れると遮断（例：一般に20A）</td></tr>
+  </table>
+  <div class="def-box" style="margin-top:10px">
+    <dt>電気容量の目安</dt>
+    <dd>1A＝100W／契約 30A＝3000W／近年は 60A＝6000W が使われることも多い</dd>
+  </div>
+</div>
+
+<div class="card">
+  <h3>ハウスクリーニングにおける電気機器使用時の注意点</h3>
+  <ul class="list">
+    <li>現場調査・見積り時に、電気や水道等が正しく使用できるか事前に調べておく</li>
+    <li>作業中に不意にブレーカーを落とさないよう、<strong>ブレーカー（分電盤）の位置を事前に確認</strong>しておく</li>
+    <li>施工物件のアンペア数を知っておき、同一コンセントで複数の機器を重複使用しない（ブレーカーが落ちる原因）</li>
+    <li>電気抵抗のかかる延長コードリールを使用する際は、注意が必要（発熱・巻いたままは避ける）</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>ブレーカーの復旧とテスト</h3>
+  <table>
+    <tr><th>状況</th><th>対応</th></tr>
+    <tr><td><strong>漏電ブレーカーのテスト</strong></td><td>テストボタンを押し、スイッチが「落ちる」（正しく動作）ことを確認。落ちない場合は火災や重大事故につながる危険があるため、管理会社や電力会社に連絡する</td></tr>
+    <tr><td><strong>回路用ブレーカー（安全ブレーカー）が落ちた</strong></td><td>電気の使い過ぎや使用機器のショート等が原因。分電盤でどのスイッチが落ちたか確認し、その回路が容量オーバーであれば<strong>別のコンセント（回路）に変更</strong>して再発を回避する</td></tr>
+    <tr><td><strong>復旧の手順</strong></td><td>いずれのブレーカーも、落ちたら<strong>使用していた電気機器の電源を必ずオフにしてから</strong>各ブレーカーを復旧させる（落ちているグレー部分を上にあげる／図表9-21）</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>延長コードを使用する場合</h3>
+  <ul class="list">
+    <li>使用するすべての機器の消費電力（W）を把握しておく。同一コンセントから複数機器を同時に使用しない</li>
+    <li><strong>延長コードリールは、コードを全て引き延ばして使用する</strong>。巻いたままだとコードに熱が生じてブレーカーを落とす・火災の原因になる</li>
+    <li>コードが細く銅線が細いと電圧低下（ドロップ）が起こり、コードに熱が生じて火災の原因になる</li>
+    <li><strong>2本の延長コードを連結して使用しない</strong>（電圧低下・危険）。最低限の長さのコードを使う</li>
+    <li>価格だけで安価な物を選ばず、<strong>最大ワット数（W）の表記を確認</strong>して余裕のある物を選ぶ。<strong>延長コードの最大ワット数は1500Wが限界</strong></li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>独自に用意しておきたい安全装置</h3>
+  <div class="highlight">接地（アース）・漏電防止・過負荷（過電流）遮断などの機能が付いた製品を選ぶと安全。プラグ型の漏電遮断器（ブレーカー付きプラグ）の使用が推奨される。</div>
+  <table style="margin-top:10px">
+    <tr><th>安全装置</th><th>特徴</th></tr>
+    <tr><td><strong>過負荷・漏電保護付きコードリール</strong></td><td>ワット数確認に加え、接地・漏電防止・過負荷保護機能付きを選ぶ</td></tr>
+    <tr><td><strong>漏電プラグ／過負荷・漏電保護兼用プラグ</strong></td><td>一般的に15A程のブレーカーが独自に付いており、負荷が発生した際に<strong>プラグ側のブレーカーが優先して落ちる</strong>ため、家屋や作業施設本体のブレーカーを落とさずに済む</td></tr>
+    <tr><td><strong>電源タップ（サンダーカット）・雷防護アダプタ・個別スイッチ付き延長コード</strong></td><td>雷や過電流から機器を守る。個別スイッチ付きは不要な回路を切れる</td></tr>
+  </table>
+  <div class="warn" style="margin-top:8px">⚠ 複数台の電動機器を使って作業する場合は、これらのプラグを使用しておくと、家屋本体のブレーカーを落とさずに作業でき、電力の集中を未然に防げる。</div>
+</div>
+
+<div class="card">
+  <h3>第9章 試験頻出ひっかけポイント</h3>
+  <table>
+    <tr><th>テーマ</th><th>誤り（×）</th><th>正しい（○）</th></tr>
+    <tr><td>ハインリッヒの法則</td><td>1：29：300 の「300」は重大災害</td><td>「1」重大災害／「29」軽微な災害／「300」ヒヤリ・ハット</td></tr>
+    <tr><td>第三次産業で最多の災害型</td><td>墜落・転落</td><td><strong>転倒</strong>（約32%）が最多</td></tr>
+    <tr><td>ウイルスと抗生剤</td><td>ウイルスに抗菌薬（抗生剤）が有効</td><td>ウイルスに抗生剤は<strong>無効</strong>。有効なのは細菌</td></tr>
+    <tr><td>ウイルスと細菌の大きさ</td><td>ウイルスの方が細菌より大きい</td><td>ウイルス（10〜100nm）は細菌（約1μm）より<strong>小さい</strong></td></tr>
+    <tr><td>高所作業の定義</td><td>3m以上</td><td><strong>2m以上</strong>の高さで行う作業</td></tr>
+    <tr><td>はしごの立てかけ角度</td><td>60度程度</td><td><strong>75度</strong>程度。上端から60cm以上突出</td></tr>
+    <tr><td>脚立の作業位置</td><td>天板の上に乗って作業してよい</td><td>天板上・天板をまたいでの作業は<strong>禁止</strong>。2段目以下で作業</td></tr>
+    <tr><td>感染成立の要因</td><td>感染源と感受性宿主の2つ</td><td><strong>感染源・感染経路・感受性宿主の3要因</strong></td></tr>
+    <tr><td>1コンセントの電気容量</td><td>30A・3000Wまで</td><td>1コンセントは<strong>15A・1500Wまで</strong></td></tr>
+    <tr><td>電力の式</td><td>電流÷電圧＝電力</td><td><strong>電流（A）×電圧（V）＝電力（W）</strong></td></tr>
+    <tr><td>下水道の雨水用</td><td>汚水を流してよい</td><td>雨水用は<strong>公共用水域へ直接排出</strong>されるため汚水を流してはならない</td></tr>
+    <tr><td>延長コードリールの使い方</td><td>巻いたまま使ってよい</td><td><strong>全て引き延ばして使用</strong>。巻いたままは発熱・火災の原因</td></tr>
+    <tr><td>延長コードの最大容量</td><td>2000Wまで使える</td><td>延長コードの最大ワット数は<strong>1500Wが限界</strong></td></tr>
+  </table>
+</div>
+
+
+<!-- ===== 第10章 快適で健康的な住宅に関するガイドライン ===== -->
+<div class="chapter-divider">
+  <div class="eyebrow">CHAPTER 10</div>
+  <h2>快適で健康的な住宅に関するガイドライン</h2>
+</div>
+
+<div class="card">
+  <div class="warn">⚠ 第10章は過去問で<strong>最頻出（★）</strong>の分野。居住環境・健康／シックハウス・ホルムアルデヒド／CO₂／カビ・ダニ・衛生害虫が繰り返し出題される。</div>
+  <div class="highlight" style="margin-top:8px">
+    <strong>全9節：</strong>第1節 空気環境／第2節 揮発性有機化学物質／第3節 臭気対策／第4節 ダニ対策／第5節 カビ対策／第6節 ネズミ・衛生害虫／第7節 給排水設備／第8節 騒音・振動／第9節 照明
+  </div>
+</div>
+
+<!-- 第1節 -->
+<div class="section-label">
+  <div class="num" style="background:var(--badge-5)">31</div>
+  <h2>第1節　住宅の空気環境</h2>
+</div>
+
+<div class="card">
+  <h3>快適な温熱環境（冷暖房）</h3>
+  <table>
+    <tr><th>項目</th><th>目安</th></tr>
+    <tr><td>冷房時の室温</td><td><strong>25〜28℃</strong>が適温。冷やし過ぎない</td></tr>
+    <tr><td>室内外の温度差</td><td><strong>7℃以内</strong>が望ましい</td></tr>
+    <tr><td>気流の効果</td><td>気流が <strong>1m/s</strong> 増すと約 <strong>3℃</strong> 涼しく感じる</td></tr>
+    <tr><td>湿度の効果</td><td>湿度を30%下げると涼しく感じる。暖房は上げ過ぎない</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>室内空気汚染と換気（試験頻出）</h3>
+  <div class="warn">高気密・高断熱住宅はシックハウスが起こりやすい。<strong>換気量が1/4になると汚染物質濃度は約4倍</strong>になる。</div>
+  <table style="margin-top:10px">
+    <tr><th>上手な換気</th><th>ポイント</th></tr>
+    <tr><td>2方向の窓</td><td>空気の入口と出口を確保。反対側の窓も開け、空気の流れをつくる</td></tr>
+    <tr><td>換気回数</td><td><strong>毎時2回以上</strong>が目安。扇風機の併用も有効</td></tr>
+    <tr><td>調理・入浴時</td><td>換気扇を使い、湿気・臭気・燃焼ガスを排出する</td></tr>
+  </table>
+</div>
+
+<!-- 第2節 -->
+<div class="section-label">
+  <div class="num" style="background:var(--badge-5)">32</div>
+  <h2>第2節　揮発性有機化学物質（VOC）</h2>
+</div>
+
+<div class="card">
+  <h3>ホルムアルデヒド（超頻出）</h3>
+  <div class="def-box">
+    <dt>性質</dt>
+    <dd><strong>無色だが刺激臭があり、水に溶けやすい</strong>気体。35〜37%水溶液を<strong>ホルマリン</strong>という</dd>
+    <dt>主な発生源</dt>
+    <dd>尿素系接着剤、合板、パーティクルボードなど（新建材）</dd>
+    <dt>室内濃度指針値</dt>
+    <dd>厚生労働省 <strong>100μg/㎥（＝0.08ppm）</strong>。健康影響としてシックハウス症候群を起こす</dd>
+  </div>
+  <div class="warn" style="margin-top:8px">⚠ ひっかけ：「無臭・水に溶けにくい」は誤り。「100μg/㎥＝0.008ppm」も誤り（正しくは0.08ppm）。</div>
+</div>
+
+<div class="card">
+  <h3>VOC（揮発性有機化合物）とその分類</h3>
+  <p style="font-size:13px;margin-bottom:10px">VOCはいくつもの化合物が混在し、沸点50〜250℃のものが大部分。WHOは沸点で次のように分類する（図表10-1）。</p>
+  <table>
+    <tr><th>分類</th><th>内容</th></tr>
+    <tr><td><strong>VVOC</strong></td><td>高揮発性有機化合物</td></tr>
+    <tr><td><strong>VOC</strong></td><td>揮発性有機化合物（沸点50〜250℃が大部分）</td></tr>
+    <tr><td><strong>SVOC</strong></td><td>準揮発性有機化合物</td></tr>
+    <tr><td><strong>POM</strong></td><td>粒子状有機物質</td></tr>
+  </table>
+  <div class="highlight" style="margin-top:8px">建材のVOC発生量 ＝ <strong>使用面積 × 発生速度</strong>。健康影響：疲労・頭痛・眠気・めまい・視界のぼやけ・皮膚や眼・気道の刺激など</div>
+</div>
+
+<div class="card">
+  <h3>防蟻剤（シロアリ対策薬剤）</h3>
+  <p style="font-size:13px;margin-bottom:10px">シロアリ（イエシロアリ・ヤマトシロアリ、北海道以外に分布）対策に使う。多くは神経のアセチルコリン伝達を阻害する。</p>
+  <div class="warn"><strong>クロルピリホスは、現在シックハウス対策として建築基準法で使用が禁止されている（図表10-5）。</strong>他にダイアジノン、ペルメトリン、プロポクスル（PHC）など。</div>
+</div>
+
+<!-- 第3節 -->
+<div class="section-label">
+  <div class="num" style="background:var(--badge-5)">33</div>
+  <h2>第3節　臭気対策</h2>
+</div>
+
+<div class="card">
+  <h3>脱臭法5種（試験頻出）</h3>
+  <table>
+    <tr><th>脱臭法</th><th>内容</th></tr>
+    <tr><td><strong>① 換気法</strong></td><td>換気により臭気を排出する（最も基本）</td></tr>
+    <tr><td><strong>② 吸収法</strong></td><td>水や薬液に臭気成分を吸収させる</td></tr>
+    <tr><td><strong>③ 吸着法</strong></td><td>活性炭などに臭気成分を吸着させる</td></tr>
+    <tr><td><strong>④ 触媒反応法</strong></td><td>触媒により臭気成分を分解する</td></tr>
+    <tr><td><strong>⑤ 生物学的方法</strong></td><td>微生物により臭気成分を分解する</td></tr>
+  </table>
+  <div class="def-box" style="margin-top:10px">
+    <dt>望ましいニオイ環境と住まい方</dt>
+    <dd>水洗トイレの悪臭対策＝<strong>トラップの封水管理</strong>とまめな掃除／浴室＝トラップ設置とカビ対策／排水口＝封水切れの防止／カビ臭＝結露防止。※住居内の臭気3大発生源は「トイレ・浴室・台所」</dd>
+  </div>
+</div>
+
+<!-- 第4節 -->
+<div class="section-label">
+  <div class="num" style="background:var(--badge-5)">34</div>
+  <h2>第4節　ダニ対策</h2>
+</div>
+
+<div class="card">
+  <h3>家屋内のダニ類</h3>
+  <div class="highlight">ダニは世界で約6万種、日本で約1700種、家屋内に約150種。</div>
+  <table style="margin-top:10px">
+    <tr><th>種類</th><th>特徴</th></tr>
+    <tr><td><strong>ヒョウヒダニ類</strong>（チリダニ科）</td><td><strong>アレルギー疾患（喘息・結膜炎・鼻炎・アトピー性皮膚炎）の主な原因物質＝アレルゲン。</strong>糞由来のアレルゲン活性が高く、家屋内のダニの<strong>70%以上</strong>を占め、最も注意が必要。人は刺さない</td></tr>
+    <tr><td><strong>ミナミツメダニ</strong></td><td>8〜9月に異常発生。吸血はしないが人を刺す。ヒョウヒダニ等を捕食する</td></tr>
+    <tr><td><strong>イエダニ</strong></td><td>ネズミに寄生して吸血するが、人からも吸血する。ネズミ被害があるとイエダニ被害も増える</td></tr>
+    <tr><td>トリサシダニ・ワクモ・スズメサシダニ</td><td>野鳥に寄生。野鳥が巣立った後、人に被害が出ることがある</td></tr>
+    <tr><td><strong>ヒゼンダニ</strong></td><td>人に寄生し<strong>疥癬（カイセン）症</strong>を起こす</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>ダニの繁殖条件と防除（試験頻出）</h3>
+  <table>
+    <tr><th>条件</th><th>内容</th></tr>
+    <tr><td>温度</td><td>通常 <strong>20〜30℃</strong>（特に25〜28℃）でよく繁殖。高温には弱い</td></tr>
+    <tr><td>湿度</td><td>相対湿度 <strong>60%以上</strong>で繁殖。<strong>50%以下では繁殖できない</strong></td></tr>
+    <tr><td>餌</td><td>塵の中のフケ・アカ、食品の屑など</td></tr>
+    <tr><td>習性</td><td>捕食性・<strong>背光性（暗い所を好む）</strong>。畳・カーペット・寝具に潜む</td></tr>
+  </table>
+  <div class="highlight" style="margin-top:8px"><strong>防除法：</strong>フローリング・コルク・ビニル床材は繁殖が少ない。真空掃除機で定期清掃（1㎡あたり20秒・週1〜2回、100〜200匹/㎡以下が目安）。寝具は布団洗浄。イエダニ等はネズミ駆除が根本対策。</div>
+</div>
+
+<!-- 第5節 -->
+<div class="section-label">
+  <div class="num" style="background:var(--badge-5)">35</div>
+  <h2>第5節　カビ対策</h2>
+</div>
+
+<div class="card">
+  <h3>カビの発育条件（5因子）</h3>
+  <div class="def-box">
+    <dt>カビが増殖する5つの因子</dt>
+    <dd>① 栄養分　② 酸素　③ 温度　④ 湿度　⑤ 時間</dd>
+    <dt>環境条件</dt>
+    <dd>相対湿度 <strong>75〜100%</strong>、温度 <strong>20〜30℃</strong> でよく成長。<strong>37℃では多くのカビが成長できない</strong></dd>
+  </div>
+  <table style="margin-top:10px">
+    <tr><th>水分利用能力による分類（図表10-8）</th><th>成長できる最低相対湿度</th></tr>
+    <tr><td>細菌類</td><td>約 90〜95%</td></tr>
+    <tr><td><strong>好湿性カビ</strong></td><td>90%以上</td></tr>
+    <tr><td><strong>耐乾性カビ</strong></td><td>80%以上</td></tr>
+    <tr><td><strong>好乾性カビ</strong></td><td>65〜75%（最も乾燥に強い）</td></tr>
+  </table>
+  <div class="highlight" style="margin-top:8px">カビの栄養源になる建材（図表10-7）：畳・木材・ベニア板・紙（植物）／プラスチック・塗料・接着剤・塩化ビニルクロス（合成樹脂）／石膏ボード・塗り壁（有機物と無機物の混合）</div>
+</div>
+
+<div class="card">
+  <h3>カビと健康・防カビ対策</h3>
+  <table>
+    <tr><th>健康障害3分類</th><th>内容</th></tr>
+    <tr><td>① アレルゲンとしてのカビ</td><td>気管支喘息・アレルギー性鼻炎・アトピー性皮膚炎など</td></tr>
+    <tr><td>② 感染病原微生物としてのカビ</td><td>白癬（水虫）・カンジダ症など（浅在性／深在性真菌感染）</td></tr>
+    <tr><td>③ 毒素産生微生物としてのカビ</td><td><strong>マイコトキシン（アフラトキシン等）</strong>による中毒性疾患</td></tr>
+  </table>
+  <div class="highlight" style="margin-top:10px"><strong>居住環境のカビは5月頃と9〜10月頃に多い。結露はカビのもと。</strong></div>
+  <table style="margin-top:10px">
+    <tr><th>防カビ対策</th><th>内容</th></tr>
+    <tr><td>物理的対策</td><td>① 水蒸気の発生を抑える ② 換気で湿気を排出 ③ 除湿で絶対湿度を下げる ④ 温度を上げて相対湿度を下げる</td></tr>
+    <tr><td>季節と対策</td><td><strong>夏の防カビ＝除湿、冬の防カビ＝断熱（結露防止）</strong></td></tr>
+    <tr><td>化学的対策</td><td>次亜塩素酸ナトリウム（6%製剤を25倍希釈＝約0.24%）を散布</td></tr>
+  </table>
+</div>
+
+<!-- 第6節 -->
+<div class="section-label">
+  <div class="num" style="background:var(--badge-5)">36</div>
+  <h2>第6節　ネズミ・衛生害虫</h2>
+</div>
+
+<div class="card">
+  <h3>ネズミ（家屋に生息する3種／試験頻出）</h3>
+  <table>
+    <tr><th>種類</th><th>特徴</th></tr>
+    <tr><td><strong>ドブネズミ</strong></td><td>体長20〜25cmの大型。屋外や床下に巣。泳ぎが得意で水洗トイレから侵入。<strong>警戒心が弱く駆除しやすい</strong></td></tr>
+    <tr><td><strong>クマネズミ</strong></td><td>体長20cm前後。<strong>垂直行動が得意で天井裏や壁の中に生息。警戒心が強く殺鼠剤が効きにくい</strong>（駆除は難しい）</td></tr>
+    <tr><td><strong>ハツカネズミ</strong></td><td>体長5cm程度の小型。畑地や倉庫に多い</td></tr>
+  </table>
+  <div class="def-box" style="margin-top:10px">
+    <dt>ネズミの確認（ラットサイン）</dt>
+    <dd>糞（ドブネズミ1〜2cm／ハツカネズミ0.5cm）・足跡・通り道の汚れ・かじり跡・巣</dd>
+    <dt>駆除法</dt>
+    <dd>食べ物の管理・住宅の管理・殺鼠剤（急性＝リン化亜鉛／抗凝血性＝クマリン系ワルファリン・ジフェチアロール、毒餌箱）・粘着トラップ・侵入口を塞ぐ</dd>
+  </div>
+</div>
+
+<div class="card">
+  <h3>ゴキブリ（重要4種）</h3>
+  <table>
+    <tr><th>種類</th><th>特徴</th></tr>
+    <tr><td><strong>クロゴキブリ</strong></td><td>体長26〜39mm、光沢のある黒褐色。関東以南〜九州に多い</td></tr>
+    <tr><td><strong>ヤマトゴキブリ</strong></td><td>体長20〜30mm、黒褐色で細型。半野外性、日本在来種</td></tr>
+    <tr><td><strong>ワモンゴキブリ</strong></td><td>体長40〜48mmの大型。胸部に黄褐色の輪状の紋（ワモン）。アフリカ原産</td></tr>
+    <tr><td><strong>チャバネゴキブリ</strong></td><td>体長10〜15mmの小型、黄褐色。胸部に一対の黒条紋。<strong>飲食店に多い</strong>。卵鞘を持つ</td></tr>
+  </table>
+  <div class="highlight" style="margin-top:8px"><strong>発生要因＝温度・食物・水</strong>の3つ。細菌の運び屋（サルモネラ・赤痢・チフス・コレラ・ローチスポット等）。防除＝環境整備・トラップ調査・残留噴霧・空間処理（燻煙／加熱蒸散）・ベイト剤（毒餌）。</div>
+</div>
+
+<div class="card">
+  <h3>その他の衛生害虫</h3>
+  <table>
+    <tr><th>害虫</th><th>特徴</th></tr>
+    <tr><td><strong>ハエ類</strong></td><td>消化器系感染症の病原体を媒介。イエバエ（胸背に4本の縦縞）・ヒメイエバエ・クロバエ類（藍色の金属光沢）・ニクバエ類（図表10-10）</td></tr>
+    <tr><td><strong>コバエ類</strong></td><td>チョウバエ類・ショウジョウバエ類・ノミバエ類・クロバネキノコバエ類（図表10-11）。発生源の除去が基本</td></tr>
+    <tr><td><strong>ノミ</strong></td><td>成虫は扁平で雌雄とも吸血。<strong>ネコノミが多い</strong>。膝から下を刺す</td></tr>
+    <tr><td><strong>蚊</strong></td><td><strong>雌のみが吸血して病気を媒介。</strong>アカイエカ（夜間吸血・フィラリア媒介）、ヒトスジシマカ（昼間・黒色に白斜紋・空き缶や古タイヤの水で発生・<strong>2014年に約69年ぶりの国内デング熱を媒介</strong>）。忌避剤＝ディート・イカリジン</td></tr>
+    <tr><td><strong>トコジラミ</strong></td><td>旧称ナンキンムシ。1970年代に一度消失、2000年頃から海外旅行者・宿泊施設経由で再増加。幼虫・成虫とも吸血、繁殖力が強い。<strong>アレルギー反応が出るまで痒くならず発見が遅れる</strong></td></tr>
+    <tr><td><strong>シラミ</strong></td><td><strong>コロモジラミ</strong>（衣類・特に下着に潜む、<strong>発疹チフスを媒介</strong>）／<strong>アタマジラミ</strong>（頭髪、幼稚園児・低学年児童で流行）／<strong>ケジラミ</strong>（蟹のような形、陰毛に寄生）。駆除は一斉に・フェノトリン粉剤やシャンプー</td></tr>
+  </table>
+</div>
+
+<!-- 第7節 -->
+<div class="section-label">
+  <div class="num" style="background:var(--badge-5)">37</div>
+  <h2>第7節　給排水設備の維持管理</h2>
+</div>
+
+<div class="card">
+  <h3>給水方式（試験頻出）</h3>
+  <div class="compare">
+    <div class="compare-box left">
+      <h4 class="left">水道直結方式</h4>
+      <p>配水管の水圧を利用して直接給水する方式。<strong>2階建てまで</strong>の建物に採用される</p>
+    </div>
+    <div class="compare-box right">
+      <h4 class="right">受水方式（受水槽）</h4>
+      <p>受水槽に一旦水を溜めてから給水。ビル・マンションなど<strong>中高層（通常3階以上）</strong>で採用。<strong>有効容量10㎥超の受水槽は、水道法で年1回の定期点検が義務</strong></p>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>排水・トラップの管理（試験頻出）</h3>
+  <div class="warn">排水系統に流してはいけない物：ガソリン・軽油・シンナー（爆発・揮発性）、酸性薬品（腐食）、油類（配管詰まり・浄化槽機能低下）など。</div>
+  <table style="margin-top:10px">
+    <tr><th>トラップの種類（図表10-16）</th><th>主な使用箇所</th></tr>
+    <tr><td>Sトラップ・Pトラップ</td><td>便器・洗面台</td></tr>
+    <tr><td>ドラムトラップ</td><td>浴室・台所</td></tr>
+    <tr><td>わんトラップ・袋トラップ</td><td>トイレ・浴室・洗面台</td></tr>
+  </table>
+  <div class="def-box" style="margin-top:10px">
+    <dt>トラップの封水がなくなる主な原因</dt>
+    <dd>① 蒸発（長時間排水を流さない）② 毛管現象（髪の毛等が引っかかり封水が伝って流れる）③ 自己サイホン作用 ④ 誘導（吸出し）サイホン作用</dd>
+    <dt>おいしい水の目安（図表10-14）</dt>
+    <dd>残留塩素0.4mg/L以下、水温は最高20℃、臭気度3以下 など</dd>
+    <dt>災害時の飲料水</dt>
+    <dd><strong>1人1日 10L</strong> を確保。保存水は残留塩素0.7〜1.0mg/L</dd>
+  </div>
+</div>
+
+<!-- 第8節 -->
+<div class="section-label">
+  <div class="num" style="background:var(--badge-5)">38</div>
+  <h2>第8節　騒音・振動</h2>
+</div>
+
+<div class="card">
+  <h3>音に関する基礎知識</h3>
+  <table>
+    <tr><th>用語</th><th>内容</th></tr>
+    <tr><td><strong>周波数（Hz）</strong></td><td>1秒間の振動回数。人間が聞こえる範囲は <strong>20〜20,000Hz</strong>。20,000Hz超＝<strong>超音波</strong>、20Hz未満＝低周波</td></tr>
+    <tr><td><strong>音の3要素</strong></td><td>音の大きさ・音の高さ・音色</td></tr>
+    <tr><td><strong>音の単位</strong></td><td>音の強弱を表すのが <strong>デシベル（dB）</strong>。騒音レベルもdBで表す（A特性）</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>床衝撃音と騒音対策（試験頻出）</h3>
+  <div class="compare">
+    <div class="compare-box left">
+      <h4 class="left">重量衝撃音（ドスンドスン）</h4>
+      <p>子供が飛び跳ねる等。床の剛性・質量が増すほど低減。<strong>床構造</strong>で対策する</p>
+    </div>
+    <div class="compare-box right">
+      <h4 class="right">軽量衝撃音（コツコツ）</h4>
+      <p>食器の落下音・スリッパの足音等。<strong>床の表面仕上げ材</strong>で対策。カーペット・スリッパ等の生活レベルで予防できる</p>
+    </div>
+  </div>
+  <table style="margin-top:10px">
+    <tr><th>時間帯（住宅地の騒音規制の目安）</th><th>受認限度</th></tr>
+    <tr><td>昼間（午前8時〜午後6時）</td><td>45dB</td></tr>
+    <tr><td>朝・夕</td><td>40dB</td></tr>
+    <tr><td>夜間（午後11時〜午前6時）</td><td>35dB</td></tr>
+  </table>
+  <div class="def-box" style="margin-top:10px">
+    <dt>アノイヤンス（annoyance）</dt>
+    <dd>騒音による総合的な「うるささ・不快感（迷惑感）」</dd>
+    <dt>ニューサンス（nuisance）</dt>
+    <dd>英米法の考え方で、土地等に付属する権利の享受を妨害すること</dd>
+    <dt>Ldn（昼夜等価騒音レベル）</dt>
+    <dd>夜間の騒音を10dB重く評価した指標</dd>
+  </div>
+</div>
+
+<!-- 第9節 -->
+<div class="section-label">
+  <div class="num" style="background:var(--badge-5)">39</div>
+  <h2>第9節　照明</h2>
+</div>
+
+<div class="card">
+  <h3>目的に合った光源（蛍光灯 vs 白熱灯／図表10-18）</h3>
+  <div class="compare">
+    <div class="compare-box left">
+      <h4 class="left">蛍光灯</h4>
+      <p>作業に適する。点滅が少ない場所向き。清潔感のある白さ。全体照明向き。<strong>W数が少なくて済む（効率が良い）</strong></p>
+    </div>
+    <div class="compare-box right">
+      <h4 class="right">白熱灯</h4>
+      <p>くつろぐ場所に適する。点滅が頻繁な場所向き。温かみのある赤み。部分照明向き。W数が多くなる</p>
+    </div>
+  </div>
+  <div class="warn" style="margin-top:8px">※ 近年はLED灯が普及している。</div>
+</div>
+
+<div class="card">
+  <h3>適切な明るさ・照明の工夫</h3>
+  <table>
+    <tr><th>部屋別の明るさ目安（図表10-19）</th><th>白熱灯</th><th>蛍光灯</th></tr>
+    <tr><td>大変明るい（子供部屋・家事室・キッチン等）</td><td colspan="2">畳1畳あたり 白熱灯約30W／蛍光灯約10W</td></tr>
+    <tr><td>普通〜暗め（寝室・廊下・玄関等）</td><td colspan="2">用途に応じて調整</td></tr>
+  </table>
+  <div class="def-box" style="margin-top:10px">
+    <dt>直接照明と間接照明</dt>
+    <dd>直接照明＝ランプの光が直接物に当たる（作業・読書向き）。間接照明＝光を壁や天井に反射させる（くつろぎ・リラックス向き）。使い分けが目に優しい</dd>
+    <dt>その他の工夫</dt>
+    <dd>壁が暗いと部屋が暗く感じる → 壁面も照らす。屋外には防犯灯。テレビ・PCモニターは光の角度が30度付近にならないよう設置。照明器具の種類はダウンライト・ブラケット・ペンダント・シーリングライト・シャンデリア・スポットライト等（図表10-21）</dd>
+  </div>
+</div>
+
+<div class="card">
+  <h3>第10章 試験頻出ひっかけポイント</h3>
+  <table>
+    <tr><th>テーマ</th><th>誤り（×）</th><th>正しい（○）</th></tr>
+    <tr><td>ホルムアルデヒドの性質</td><td>無臭・水に溶けにくい</td><td><strong>刺激臭があり水に溶けやすい</strong>。35〜37%水溶液＝ホルマリン</td></tr>
+    <tr><td>ホルムアルデヒド指針値</td><td>100μg/㎥＝0.008ppm</td><td>100μg/㎥＝<strong>0.08ppm</strong></td></tr>
+    <tr><td>換気量と汚染</td><td>換気量が減っても濃度は変わらない</td><td>換気量が1/4になると濃度は<strong>約4倍</strong></td></tr>
+    <tr><td>ダニの繁殖湿度</td><td>湿度が低くてもよく繁殖する</td><td>湿度<strong>60%以上</strong>で繁殖、<strong>50%以下では繁殖できない</strong></td></tr>
+    <tr><td>アレルゲンの主因ダニ</td><td>イエダニ</td><td><strong>ヒョウヒダニ類</strong>（全体の70%以上、糞がアレルゲン）</td></tr>
+    <tr><td>ナンキンムシ＝吸血害虫</td><td>コロモジラミ</td><td><strong>トコジラミ</strong>（旧ナンキンムシ）</td></tr>
+    <tr><td>カビの成長温度</td><td>37℃で最もよく成長</td><td>37℃では<strong>多くのカビが成長できない</strong>。20〜30℃でよく成長</td></tr>
+    <tr><td>防カビ（季節）</td><td>夏は断熱、冬は除湿</td><td><strong>夏は除湿、冬は断熱（結露防止）</strong></td></tr>
+    <tr><td>クマネズミ</td><td>警戒心が弱く駆除しやすい</td><td><strong>警戒心が強く殺鼠剤が効きにくい</strong>（駆除は難しい）</td></tr>
+    <tr><td>蚊の吸血</td><td>雌雄とも吸血する</td><td><strong>雌のみが吸血</strong>して病気を媒介する</td></tr>
+    <tr><td>受水槽の点検</td><td>点検義務はない</td><td>有効容量10㎥超は<strong>水道法で年1回の点検義務</strong></td></tr>
+    <tr><td>人間の可聴域</td><td>20〜2,000Hz</td><td><strong>20〜20,000Hz</strong>（20,000Hz超＝超音波）</td></tr>
+    <tr><td>クロルピリホス</td><td>防蟻剤として使用できる</td><td>建築基準法で<strong>使用禁止</strong></td></tr>
+  </table>
+</div>
+
+
+<!-- ===== 第5章 まとめ・試験対策ポイント ===== -->
+<div class="section-label">
+  <div class="num" style="background:var(--badge-5)">★</div>
+  <h2>第5章 試験対策まとめ（重要度高）</h2>
+</div>
+
+<div class="card">
+  <h3>第5章 ひっかけ問題パターン注意</h3>
+  <table>
+    <tr><th>テーマ</th><th>よくある誤り（×）</th><th>正しい知識（○）</th></tr>
+    <tr><td>大理石のクリーニング</td><td>酸性洗剤でも使える</td><td>大理石・テラゾー・モルタルは<strong>酸性に弱い</strong></td></tr>
+    <tr><td>花崗岩</td><td>酸性に弱い</td><td>花崗岩は<strong>酸・アルカリ性に強い</strong></td></tr>
+    <tr><td>タイルの目地</td><td>酸・アルカリどちらにも強い</td><td>タイル本体は強いが、<strong>目地は酸性に弱い</strong></td></tr>
+    <tr><td>リノリウム</td><td>強アルカリに強い</td><td>リノリウムは<strong>強アルカリに対して変色</strong>する</td></tr>
+    <tr><td>ゴム系床材</td><td>強アルカリ性に強い</td><td>ゴム系は<strong>耐油性に乏しく強アルカリ性に弱い</strong></td></tr>
+    <tr><td>RC造のカビ</td><td>気密性が高いのでカビが生じにくい</td><td>RC造は気密性が高いため<strong>カビが発生しやすい</strong>。換気が必要</td></tr>
+    <tr><td>S造の結露</td><td>調湿効果があり結露しにくい</td><td>S造は<strong>調湿効果がなく、気密性が高いため結露が発生しやすい</strong></td></tr>
+    <tr><td>木造の法定耐用年数</td><td>47年</td><td>木造は<strong>22年</strong>（RC造が47年）</td></tr>
+    <tr><td>ビニル系天井シート</td><td>通気性・透湿性に優れる</td><td>ビニル系シートは<strong>通気性・透湿性に乏しいため結露やカビが生じやすい</strong></td></tr>
+    <tr><td>ステンレス</td><td>鉄100%</td><td>ステンレスは炭素鋼にクロム（Cr）・ニッケル（Ni）を加えた合金。<strong>クロム11%以上でサビにくくなる</strong></td></tr>
+    <tr><td>フローリングのクリーニング</td><td>たっぷりの水で洗浄する</td><td>木質系床材は<strong>水分を極力少なく使う</strong>ことがトラブル防止のポイント</td></tr>
+  </table>
+</div>
+
+</main>
+
+<footer>
+  <p>ハウスクリーニング技能検定 学習まとめ｜第1〜10章より作成</p>
+</footer>
+
+</body>
+</html>
